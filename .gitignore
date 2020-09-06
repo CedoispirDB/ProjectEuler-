@@ -4,6 +4,7 @@ out/**
 *.jar
 *.war
 *.ear
+.idea
 
 hs_err_pid*
 *.idea
