@@ -1,0 +1,16 @@
+.idea/
+out/**
+*.class
+*.jar
+*.war
+*.ear
+
+hs_err_pid*
+*.idea
+*.iml
+.project
+.settings
+log/
+target/
+
+.DS_Store
