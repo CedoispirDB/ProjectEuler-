@@ -6,8 +6,11 @@ public class largeSum13 {
     public static void sum(List<String> listOfNumbers) {
         int sum = 0;
         int x;
-
-
+        for (String l : listOfNumbers) {
+             for (int i = 0; i <= 50; i++) {
+                 sum = l.charAt(i);
+             }
+        }
 
 
         tools.d(sum);
