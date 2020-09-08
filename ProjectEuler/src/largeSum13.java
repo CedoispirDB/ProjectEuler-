@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 
+// Sum of very large numbers using Strings
 public class largeSum13 {
     public static String sum(List<String> numbers, int digits) {
         String result = "";
