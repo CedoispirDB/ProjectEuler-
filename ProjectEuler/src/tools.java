@@ -42,10 +42,19 @@ public class tools {
 
         return prime;
     }
+    public static long factorialOfNumber(long n ){
+        long factorial = 1;
+        for(long i = 1; i<= n; i++){
+            factorial *= i;
+        }
+        tools.d(factorial);
+        return factorial;
+
+    }
 
 
     public static void main(String[] args) {
-        format(8.9);
+        factorialOfNumber(3);3
     }
 
 

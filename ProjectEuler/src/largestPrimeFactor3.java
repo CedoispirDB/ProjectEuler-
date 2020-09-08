@@ -9,7 +9,7 @@ public class largestPrimeFactor3 {
         for (long v = 1; v <= x; v++) {
             if (x % v == 0) {
                 if (tools.isItPrime(v)) {
-                   i=v;
+                   i = v;
                     // tools.d(v);
                 }
 
