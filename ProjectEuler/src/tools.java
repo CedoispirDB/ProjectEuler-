@@ -54,7 +54,7 @@ public class tools {
 
 
     public static void main(String[] args) {
-        factorialOfNumber(3);3
+        factorialOfNumber(3);
     }
 
 
