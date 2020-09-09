@@ -46,6 +46,6 @@ https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/lattic
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/latticePaths.java
 
 Tools:
-
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/tools.java
  
 
