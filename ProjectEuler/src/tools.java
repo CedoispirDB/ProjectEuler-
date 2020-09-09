@@ -1,10 +1,9 @@
-
 import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 
-
 public class tools {
+
 
     public static void format(double in) {
         DecimalFormat decimalFormat = new DecimalFormat("#0.00");
@@ -51,16 +50,15 @@ public class tools {
             factorial = factorial.multiply(ib);
             //tools.d(factorial);
         }
-       //tools.d("y: " + factorial);
+        //tools.d("y: " + factorial);
         return factorial;
 
     }
 
 
-
     public static void main(String[] args) {
 
-       // int n = 20;
+        // int n = 20;
         //BigInteger y = BigInteger.valueOf(121645100408832000L);
 
         //BigInteger x = y.multiply(BigInteger.valueOf(n));
@@ -72,4 +70,7 @@ public class tools {
 
 
 }
+
+
+
 
