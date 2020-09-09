@@ -1,4 +1,5 @@
 
+import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 
@@ -24,7 +25,7 @@ public class tools {
         boolean prime = true;
         //if (x == 1) {
         //   prime = true;
-        if ((x % 2 == 0 && x != 2) || (x % 3 == 0 && x != 3) || x ==1) {
+        if ((x % 2 == 0 && x != 2) || (x % 3 == 0 && x != 3) || x == 1) {
             prime = false;
         } else {
             // checks if less X can be divided by w
@@ -42,19 +43,31 @@ public class tools {
 
         return prime;
     }
-    public static long factorialOfNumber(long n ){
-        long factorial = 1;
-        for(long i = 1; i<= n; i++){
-            factorial *= i;
+
+    public static BigInteger factorialOfNumber(long n) {
+        BigInteger factorial = BigInteger.valueOf(1);
+        for (long i = 1; i <= n; i++) {
+            BigInteger ib = BigInteger.valueOf(i);
+            factorial = factorial.multiply(ib);
+            //tools.d(factorial);
         }
-        tools.d(factorial);
+       //tools.d("y: " + factorial);
         return factorial;
 
     }
 
 
+
     public static void main(String[] args) {
-        factorialOfNumber(3);
+
+       // int n = 20;
+        //BigInteger y = BigInteger.valueOf(121645100408832000L);
+
+        //BigInteger x = y.multiply(BigInteger.valueOf(n));
+
+        //tools.d("x: "  + x);
+
+        factorialOfNumber(40);
     }
 
 

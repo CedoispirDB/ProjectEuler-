@@ -1,5 +1,5 @@
 
-public class LatticePaths15 {
+public class latticePaths15 {
 
     static int counter = 0;
 
