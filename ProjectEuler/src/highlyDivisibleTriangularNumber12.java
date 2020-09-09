@@ -1,6 +1,6 @@
 public class highlyDivisibleTriangularNumber12 {
 
-    public static int findTheQuantityDivisors(long x) {
+    public static int findTheQuantityOfDivisors(long x) {
         int count = 0;
         for (int i = 1; i <= x; i++) {
             if (x % i == 0) {
@@ -24,7 +24,7 @@ public class highlyDivisibleTriangularNumber12 {
 
             sum = sum + x;
             //tools.d("Number: " + sum);
-            if (findTheQuantityDivisors(sum) >= 500) {
+            if (findTheQuantityOfDivisors(sum) >= 500) {
                 break;
             }
             x++;
