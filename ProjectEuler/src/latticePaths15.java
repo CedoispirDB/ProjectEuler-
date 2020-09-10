@@ -1,38 +1,42 @@
 public class latticePaths15 {
 
-    static int counter = 0;
+    static long totalFound = 0;
 
-    private static void getNextMove(int gridRows, int gridColumns, String v) {
+    private static long getNextMove(int gridRows, int gridColumns, int r, int c) {
 
-        int r = Integer.parseInt(v.split(",")[0]);
-        int c = Integer.parseInt(v.split(",")[1]);
-
-        tools.d(r + "," + c + " : Vertex");
+        long counter = 0;
 
         // Moves Column
         if (c < gridColumns) {
             if (r == gridRows && (c + 1) == gridColumns) {
-                tools.d(gridRows + "," + gridColumns + " : Path Completed (via " + v + ")!");
                 counter++;
+                ++totalFound;
+                if (totalFound % 20000000 == 0) {
+                    tools.d(gridRows + "," + gridColumns + " : Path Completed (" + totalFound + " so far)!");
+                }
             } else {
-                getNextMove(gridRows, gridColumns, (r + "," + (c + 1)));
+                counter = counter + getNextMove(gridRows, gridColumns, r, (c + 1));
             }
         }
 
         // Moves Row
         if (r < gridRows) {
             if ((r + 1) == gridRows && c == gridColumns) {
-                tools.d(gridRows + "," + gridColumns + " : Path Completed (via " + v + ")!");
                 counter++;
+                ++totalFound;
+                if (totalFound % 20000000 ==0) {
+                    tools.d(gridRows + "," + gridColumns + " : Path Completed ("+ totalFound +" so far)!");
+                }
             } else {
-                getNextMove(gridRows, gridColumns, ((r + 1) + "," + c));
+                counter = counter + getNextMove(gridRows, gridColumns, (r + 1), c);
             }
         }
+
+        return counter;
     }
 
     public static void main(String[] args) {
-        getNextMove(3, 3, "0,0");
-        tools.d("Total "+ counter);
+        tools.d("Total " + getNextMove(20, 20, 0, 0));
 
     }
 }
