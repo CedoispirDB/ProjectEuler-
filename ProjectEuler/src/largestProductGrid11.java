@@ -8,7 +8,7 @@ public class largestProductGrid11 {
         int seqSize = 4;
         long maxSoFar = 0;
         long currentResult = 0;
-        // Loop thru entire  number list
+        // Loop through entire  number list
         for (int n = 0; n < (gridHeight * gridWidth); n++) {
             int rowPos = getRowPos(n, gridWidth);
             int colPos = getColPos(n, gridWidth);
