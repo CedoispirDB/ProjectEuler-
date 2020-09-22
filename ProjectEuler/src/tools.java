@@ -43,11 +43,21 @@ public class tools {
         return prime;
     }
 
-    public static BigInteger factorialOfNumber(long n) {
+    public static BigInteger factorialOfNumberB(long n) {
         BigInteger factorial = BigInteger.valueOf(1);
         for (long i = 1; i <= n; i++) {
             BigInteger ib = BigInteger.valueOf(i);
             factorial = factorial.multiply(ib);
+            //tools.d(factorial);
+        }
+        //tools.d("y: " + factorial);
+        return factorial;
+
+    }
+    public static long factorialOfNumber(long n) {
+        long factorial = 1;
+        for (long i = 1; i <= n; i++) {
+            factorial = factorial * i;
             //tools.d(factorial);
         }
         //tools.d("y: " + factorial);
@@ -61,14 +71,8 @@ public class tools {
 
     public static void main(String[] args) {
 
-        // int n = 20;
-        //BigInteger y = BigInteger.valueOf(121645100408832000L);
-
-        //BigInteger x = y.multiply(BigInteger.valueOf(n));
-
-        //tools.d("x: "  + x);
-
-        factorialOfNumber(40);
+        long x = factorialOfNumber(6);
+        d(x);
     }
 
 

@@ -5,10 +5,10 @@ public class latticePaths {
         long doubleOfN = 2 * n;
        // tools.d("Double of n: " + doubleOfN);
 
-        BigInteger numerator = tools.factorialOfNumber(doubleOfN);
+        BigInteger numerator = tools.factorialOfNumberB(doubleOfN);
        // tools.d("Numerator: " + numerator);
 
-        BigInteger factorialOfN = tools.factorialOfNumber(n);
+        BigInteger factorialOfN = tools.factorialOfNumberB(n);
        // tools.d("Factorial of n: " + factorialOfN);
 
         BigInteger denominator = factorialOfN.pow(2);
