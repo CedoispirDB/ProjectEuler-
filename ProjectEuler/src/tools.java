@@ -43,9 +43,10 @@ public class tools {
         return prime;
     }
 
-    public static BigInteger factorialOfNumberB(long n) {
+    public static BigInteger factorialOfNumberB(Object n) {
+        int x = Integer.parseInt((String)n);
         BigInteger factorial = BigInteger.valueOf(1);
-        for (long i = 1; i <= n; i++) {
+        for (long i = 1; i <= x; i++) {
             BigInteger ib = BigInteger.valueOf(i);
             factorial = factorial.multiply(ib);
             //tools.d(factorial);
@@ -54,9 +55,10 @@ public class tools {
         return factorial;
 
     }
-    public static long factorialOfNumber(long n) {
+    public static long factorialOfNumber(Object n) {
+        int x = Integer.parseInt((String)n);
         long factorial = 1;
-        for (long i = 1; i <= n; i++) {
+        for (long i = 1; i <= x; i++) {
             factorial = factorial * i;
             //tools.d(factorial);
         }
