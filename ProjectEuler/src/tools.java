@@ -71,7 +71,7 @@ public class tools {
 
     }
 
-    //Find all the divisors of a number
+    //Find the sum of all the divisors of a number
     public static int sumOfDivisors(int x) {
         int sumOfDivisors = 0;
         for (int i = 1; i < x; i++) {
