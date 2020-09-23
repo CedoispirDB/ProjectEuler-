@@ -22,25 +22,10 @@ public class tools {
 
     //Find if a number is prime or not
     public static boolean isItPrime(long x) {
-        boolean prime = true;
-        //if (x == 1) {
-        //   prime = true;
-        if ((x % 2 == 0 && x != 2) || (x % 3 == 0 && x != 3) || x == 1) {
-            prime = false;
-        } else {
-            // checks if less X can be divided by w
-            for (int w = 2; w < Math.floor(x / 3); w++) {
-                if (x % w == 0) {
-                    //tools.d(w);
-                    prime = false;
-                    break;
-
-                }
-            }
-
+        boolean prime = false;
+        if (sumOfDivisors(x) == 1) {
+            prime = true;
         }
-
-
         return prime;
     }
 
@@ -72,7 +57,7 @@ public class tools {
     }
 
     //Find the sum of all the divisors of a number
-    public static int sumOfDivisors(int x) {
+    public static int sumOfDivisors(long x) {
         int sumOfDivisors = 0;
         for (int i = 1; i < x; i++) {
             if (x % i == 0) {
