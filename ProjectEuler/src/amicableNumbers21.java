@@ -1,16 +1,6 @@
 import java.util.*;
 
 public class amicableNumbers21 {
-    //Find the divisors of a number
-    public static int sumOfDivisors(int x) {
-        int sumOfDivisors = 0;
-        for (int i = 1; i < x; i++) {
-            if (x % i == 0) {
-                sumOfDivisors += i;
-            }
-        }
-        return sumOfDivisors;
-    }
     //Make a list of amicable numbers
     public static Set<Integer> amicableNumbers(int k) {
         Set<Integer> amicableNumbers = new LinkedHashSet<>();
@@ -19,9 +9,9 @@ public class amicableNumbers21 {
         int db;
 
         for (int a = 1; a <= k; a++) {
-            da = sumOfDivisors(a);
+            da = tools.sumOfDivisors(a);
             b = da;
-            db = sumOfDivisors(b);
+            db = tools.sumOfDivisors(b);
             // tools.d(da);
             //tools.d(db);
             if(db == a && a!= b) {

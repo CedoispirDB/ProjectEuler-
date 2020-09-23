@@ -71,14 +71,23 @@ public class tools {
 
     }
 
+    //Find all the divisors of a number
+    public static int sumOfDivisors(int x) {
+        int sumOfDivisors = 0;
+        for (int i = 1; i < x; i++) {
+            if (x % i == 0) {
+                sumOfDivisors += i;
+            }
+        }
+        return sumOfDivisors;
+    }
+
 
     public static void main(String[] args) {
 
         long x = factorialOfNumber(6);
         d(x);
     }
-
-
 }
 
 
