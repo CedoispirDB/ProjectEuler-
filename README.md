@@ -45,6 +45,21 @@ Project 15:
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/latticePaths15.java
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/latticePaths.java
 
+Project 16:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/powerDigitSum16.java
+
+Project 17:
+
+Project 18:
+
+Project 19:
+
+Project 20:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/factorialDigitSum20.java
+
+Project 21:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/amicableNumbers21.java
+
 Tools:
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/tools.java
  
