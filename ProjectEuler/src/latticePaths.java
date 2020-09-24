@@ -14,13 +14,10 @@ public class latticePaths {
         BigInteger denominator = factorialOfN.pow(2);
        // tools.d("Denominator: " + denominator);
 
-        BigInteger division = numerator.divide(denominator);
-        tools.d("Division: " + division);
-
-        return division;
+        return numerator.divide(denominator);
     }
 
     public static void main(String[] args) {
-       findPossibilities(20);
+       tools.d(findPossibilities(20));
     }
 }
