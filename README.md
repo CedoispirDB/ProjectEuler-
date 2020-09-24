@@ -60,6 +60,11 @@ https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/factor
 Project 21:
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/amicableNumbers21.java
 
+Project 22:
+
+Project 23:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/nonAbundantSums23.java
+
 Tools:
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/tools.java
  
