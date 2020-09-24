@@ -69,9 +69,6 @@ public class tools {
 
 
     public static void main(String[] args) {
-
-        long x = factorialOfNumber(6);
-        d(x);
     }
 }
 
