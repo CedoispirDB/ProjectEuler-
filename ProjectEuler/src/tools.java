@@ -1,4 +1,7 @@
+import java.io.IOException;
 import java.math.BigInteger;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 
@@ -67,6 +70,22 @@ public class tools {
         return sumOfDivisors;
     }
 
+    //Get information from a file
+    public static String readFromFile() {
+
+        String path = "ProjectEuler-/names.txt";
+        String content = "";
+        try {
+
+            // default StandardCharsets.UTF_8
+            content = Files.readString(Paths.get(path));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return content;
+
+    }
 
     public static void main(String[] args) {
     }

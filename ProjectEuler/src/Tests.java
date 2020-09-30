@@ -1,12 +1,17 @@
+
+import java.lang.reflect.Array;
+import java.util.*;
+
 public class Tests {
     public static void main(String[] args) {
-        int sumOfDivisors = 0;
-        int x = 284;
-        for (int i = 1; i < x; i++){
-            if (x % i == 0){
-                sumOfDivisors += i;
-            }
+        List<String> x = Arrays.asList("Marco", "Marcelo", "Agda", "Luana", "Bia", "Bianca");
+        Collections.sort(x);
+        x.forEach(System.out::println);
+        int position = 0;
+        for (String name : x) {
+            position = x.indexOf(name) + 1;
         }
-        tools.d(sumOfDivisors);
+        tools.d(position);
     }
+
 }
