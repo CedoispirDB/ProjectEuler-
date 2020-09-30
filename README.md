@@ -61,6 +61,7 @@ Project 21:
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/amicableNumbers21.java
 
 Project 22:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/NamesScores22.java
 
 Project 23:
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/nonAbundantSums23.java
