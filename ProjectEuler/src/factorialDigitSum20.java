@@ -5,7 +5,7 @@ public class factorialDigitSum20 {
         int sum = 0;
         int k = 0;
         BigInteger x = BigInteger.valueOf(p);
-        BigInteger xFactorial = tools.factorialOfNumberB(x);
+        BigInteger xFactorial = tools.factorialOfNumberB(Long.parseLong(String.valueOf(x)));
         //tools.d("Factorial of " + x + ": " + xFactorial);
         String xFactorialStr = String.valueOf(xFactorial);
         //tools.d(xFactorialStr.length());
