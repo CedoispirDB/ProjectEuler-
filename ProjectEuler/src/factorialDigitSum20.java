@@ -1,9 +1,10 @@
 import java.math.BigInteger;
 
 public class factorialDigitSum20 {
-    public static void sumOfDigits(long x){
+    public static void sumOfDigits(long p){
         int sum = 0;
         int k = 0;
+        BigInteger x = BigInteger.valueOf(p);
         BigInteger xFactorial = tools.factorialOfNumberB(x);
         //tools.d("Factorial of " + x + ": " + xFactorial);
         String xFactorialStr = String.valueOf(xFactorial);
