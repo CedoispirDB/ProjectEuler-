@@ -1,7 +1,4 @@
-import java.io.IOException;
 import java.math.BigInteger;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 
@@ -14,11 +11,20 @@ public class tools {
     }
 
     //Print value with date and time
-    public static void d(Object x) {
-        System.out.println(new Timestamp(System.currentTimeMillis()) + " - " + x);
+    public static void d(Object x, int line) {
+        if (line == 0) {
+            System.out.print(new Timestamp(System.currentTimeMillis()) + " : " + x + " ");
+        } else {
+            System.out.println(new Timestamp(System.currentTimeMillis()) + " : " + x);
+        }
     }
 
-    //Print value
+    //Print value in the same line line
+    public static void d(Object x){
+        System.out.println(new Timestamp(System.currentTimeMillis()) + " : " + x);
+    }
+
+    //Print value without date
     public static void l(Object x) {
         System.out.println(x);
     }
@@ -26,16 +32,16 @@ public class tools {
     //Find if a number is prime or not
     public static boolean isItPrime(long x) {
         boolean prime = false;
-        if (sumOfDivisors(x) == 1) {
+        if (sumOfDivisors(x) == 1 || x == 1) {
             prime = true;
         }
         return prime;
     }
 
     //Find the factorial of a number - returns A BigInteger
-    public static BigInteger factorialOfNumberB(Object n) {
-        int x = Integer.parseInt((String) n);
+    public static BigInteger factorialOfNumberB(long n) {
         BigInteger factorial = BigInteger.valueOf(1);
+        int x = Integer.parseInt(String.valueOf(n));
         for (long i = 1; i <= x; i++) {
             BigInteger ib = BigInteger.valueOf(i);
             factorial = factorial.multiply(ib);
@@ -47,10 +53,9 @@ public class tools {
     }
 
     //Find the factorial of a number - returns a long
-    public static long factorialOfNumber(Object n) {
-        int x = Integer.parseInt((String) n);
+    public static long factorialOfNumber(long n) {
         long factorial = 1;
-        for (long i = 1; i <= x; i++) {
+        for (long i = 1; i <= n; i++) {
             factorial = factorial * i;
             //tools.d(factorial);
         }
@@ -60,9 +65,9 @@ public class tools {
     }
 
     //Find the sum of all the divisors of a number
-    public static int sumOfDivisors(long x) {
-        int sumOfDivisors = 0;
-        for (int i = 1; i < x; i++) {
+    public static long sumOfDivisors(long x) {
+        long sumOfDivisors = 0;
+        for (long i = 1; i < x; i++) {
             if (x % i == 0) {
                 sumOfDivisors += i;
             }
@@ -70,25 +75,13 @@ public class tools {
         return sumOfDivisors;
     }
 
-    //Get information from a file
-    public static String readFromFile() {
-
-        String path = "ProjectEuler-/names.txt";
-        String content = "";
-        try {
-
-            // default StandardCharsets.UTF_8
-            content = Files.readString(Paths.get(path));
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return content;
+    //Give the result of a number x to the e power
+    public static int exponent(int x, int e) {
+        double result = Math.pow(x, e);
+        return (int) result;
 
     }
 
-    public static void main(String[] args) {
-    }
 }
 
 

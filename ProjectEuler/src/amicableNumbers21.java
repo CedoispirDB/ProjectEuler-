@@ -9,9 +9,9 @@ public class amicableNumbers21 {
         int db;
 
         for (int a = 1; a <= k; a++) {
-            da = tools.sumOfDivisors(a);
+            da = (int) tools.sumOfDivisors(a);
             b = da;
-            db = tools.sumOfDivisors(b);
+            db = (int) tools.sumOfDivisors(b);
             // tools.d(da);
             //tools.d(db);
             if(db == a && a!= b) {

@@ -8,7 +8,7 @@ public class nonAbundantSums23 {
     public static Set<Integer> abundantNumbers(int x) {
         Set<Integer> listOfAbundantNumbers = new LinkedHashSet<>();
         for (int i = 1; i < x; i++) {
-            int k = tools.sumOfDivisors(i);
+            int k = (int) tools.sumOfDivisors(i);
             //tools.d("The sum of the divisors of " + i + ": " + k);
             if (k > i) {
                 listOfAbundantNumbers.add(i);
