@@ -1,6 +1,8 @@
 import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
+import java.util.LinkedList;
+import java.util.List;
 
 public class tools {
 
@@ -20,7 +22,7 @@ public class tools {
     }
 
     //Print value in the same line line
-    public static void d(Object x){
+    public static void d(Object x) {
         System.out.println(new Timestamp(System.currentTimeMillis()) + " : " + x);
     }
 
@@ -31,11 +33,18 @@ public class tools {
 
     //Find if a number is prime or not
     public static boolean isItPrime(long x) {
-        boolean prime = false;
-        if (sumOfDivisors(x) == 1 || x == 1) {
-            prime = true;
+        long sumOfDivisors = 0;
+        for (long i = 1; i < x; i++) {
+            if (x % i == 0) {
+                sumOfDivisors += i;
+                if (sumOfDivisors > 1) {
+                    return false;
+                }
+            }
         }
-        return prime;
+
+
+        return sumOfDivisors == 1;
     }
 
     //Find the factorial of a number - returns A BigInteger
@@ -79,10 +88,34 @@ public class tools {
     public static int exponent(int x, int e) {
         double result = Math.pow(x, e);
         return (int) result;
-
     }
 
+    public static long exponent(long x, long e) {
+        double result = Math.pow(x, e);
+        return (long) result;
+    }
+
+
+
+    //tools.d(primeNumbers.size());
+    //primes.forEach(System.out::println);
+
+
+    public static void main(String[] args) {
+        List<Integer> primeNumbers = new LinkedList<>();
+
+        for (int i = 2; i < 1000000; i++) {
+            if (tools.isItPrime(i)) {
+                primeNumbers.add(i);
+                tools.d(i);
+
+            }
+        }
+        d("d: " + primeNumbers.size());
+    }
 }
+
+
 
 
 
