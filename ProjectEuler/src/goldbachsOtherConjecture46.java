@@ -30,7 +30,7 @@ public class goldbachsOtherConjecture46 {
 
     public static void main(String[] args) {
 
-        // 32773 =  5 + 2x128^2
+        //$ pip install charset 32773 =  5 + 2x128^2
 
         oddComposition();
     }
