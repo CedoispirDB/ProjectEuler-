@@ -36,10 +36,6 @@ public class consecutivePrimeSum50 {
                     break;
                 }
             }
-            /*if (turns % 250000 == 0){
-                tools.d("Ta ino");
-            }*/
-            //tools.d(turns);
             turns++;
         } while (turns <= primeNumbers.size());
 
