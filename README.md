@@ -49,8 +49,10 @@ Project 16:
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/powerDigitSum16.java
 
 Project 17:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/numberLetterCounts17.java
 
 Project 18:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/maximumPathSumI18.java
 
 Project 19:
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/countingSundays19.java
@@ -66,6 +68,30 @@ https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/NamesS
 
 Project 23:
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/nonAbundantSums23.java
+
+Project 26:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/reciprocalCycles26.java
+
+Project 29:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/distinctPowers29.java
+
+Project 31:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/coinSums31.java
+
+Project 34:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/digitFactorials34.java
+
+Project 46:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/goldbachsOtherConjecture46.java
+
+Project 50:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/consecutivePrimeSum50.java
+
+Project 59:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/XORdecryption59.java
+
+Project 206:
+https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/concealedSquare206.java
 
 Tools:
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/tools.java
