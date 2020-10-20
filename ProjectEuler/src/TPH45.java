@@ -1,38 +1,40 @@
+import java.util.LinkedList;
+import java.util.List;
+
 public class TPH45 {
-    public static void TPHSameResults() {
-        long triangle;
-        long pentagon;
-        long hexagon;
-        int t = 287;
-        int p = 166;
-        int h = 144;
+    public static void TPHSameResults(int choose) {
+        List<Long> tNum = new LinkedList<>();
+        List<Long> pNum = new LinkedList<>();
+        List<Long> hNum = new LinkedList<>();
+
         int count = 0;
-        do {
-            triangle = t * (t + 1) / 2;
-            pentagon = p * (3 * p - 1) / 2;
-            hexagon = h * (2 * h - 1);
-            tools.d(triangle);
-            tools.d(pentagon);
-            tools.d(hexagon);
-            if (triangle == hexagon && hexagon == pentagon) {
-                tools.d(triangle);
-                tools.d(pentagon);
-                tools.d(hexagon);
-                break;
+
+        for (long t = 1; t < 600000; t++) {
+            tNum.add(t * (t + 1) / 2);
+        }
+        for (long p = 1; p < 600000; p++) {
+            pNum.add(p * (3 * p - 1) / 2);
+        }
+
+        for (long h = 1; h < 600000; h++) {
+            hNum.add(h * (2 * h - 1));
+        }
+
+        int x = tNum.size();
+        for (long t : tNum) {
+            //tools.d("Missing: " + x);
+            if (pNum.contains(t) && hNum.contains(t) && t >= 40755) {
+                count++;
+                if (count == choose) {
+                    tools.d("Result: " + t);
+                    System.exit(0);
+                }
             }
-            t++;
-            p++;
-            h++;
-            count++;
-            if (count < 100) {
-                t = t + 2;
-                p = p + 2;
-                h = h + 2;
-            }
-        } while (true);
+            x--;
+        }
     }
 
     public static void main(String[] args) {
-        TPHSameResults();
+        TPHSameResults(2);
     }
 }
