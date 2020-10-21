@@ -11,7 +11,7 @@ public class sumOfAllMultiples1 {
     }
 
     public static void main(String[] args) {
-        tools.l(checkForMultiples(3, 5, 1000));
+        tools.i(checkForMultiples(3, 5, 1000));
 
     }
 }

@@ -19,7 +19,7 @@ public class EvenFibonacciNumbers2 {
     }
 
     public static void main(String[] args) {
-        tools.l("The sum is "+ fibonacciSequence());
+        tools.i("The sum is "+ fibonacciSequence());
     }
 
 }
