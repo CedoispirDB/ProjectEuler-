@@ -1,3 +1,5 @@
+import utils.tools;
+
 public class eulersTotientFunction {
     private static boolean compareMultiples(int a, int b) {
         boolean sameMultiples = false;
