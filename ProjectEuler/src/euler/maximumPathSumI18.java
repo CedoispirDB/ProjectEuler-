@@ -1,5 +1,6 @@
 package euler;
 
+import utils.tools;
 import java.util.*;
 
 public class maximumPathSumI18 {

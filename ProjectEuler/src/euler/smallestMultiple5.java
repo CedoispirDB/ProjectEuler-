@@ -1,5 +1,8 @@
 package euler;
 
+import utils.tools;
+
+
 public class smallestMultiple5 {
     public static void l() {
         // Loop and get max possible result

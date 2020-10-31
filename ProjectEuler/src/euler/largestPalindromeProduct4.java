@@ -1,6 +1,7 @@
 package euler;
 
 import java.util.*;
+import utils.tools;
 
 public class largestPalindromeProduct4 {
     public static void listOfNumbers(int n,int k) {

@@ -1,6 +1,7 @@
 package euler;
 
 import java.util.*;
+import utils.tools;
 
 public class NamesScores22 {
     public static int letterSum(String names) {

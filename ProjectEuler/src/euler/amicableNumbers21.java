@@ -1,6 +1,8 @@
 package euler;
 
 import java.util.*;
+import utils.tools;
+
 
 public class amicableNumbers21 {
     //Make a list of amicable numbers

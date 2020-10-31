@@ -1,5 +1,7 @@
 package euler;
 
+import utils.tools;
+
 public class EvenFibonacciNumbers2 {
     public static int fibonacciSequence() {
         int a1 = 1;

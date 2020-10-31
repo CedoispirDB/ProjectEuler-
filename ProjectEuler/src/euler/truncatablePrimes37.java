@@ -1,4 +1,6 @@
 package euler;
+import utils.tools;
+
 
 public class truncatablePrimes37 {
 

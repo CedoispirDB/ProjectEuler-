@@ -1,4 +1,6 @@
 package euler;
+import utils.tools;
+
 
 public class summationOfPrimes10 {
     public static long sumOfPrimes(long n){

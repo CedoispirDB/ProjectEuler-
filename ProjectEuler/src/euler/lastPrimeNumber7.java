@@ -1,4 +1,5 @@
 package euler;
+import utils.tools;
 
 public class lastPrimeNumber7 {
     public static void findTheNthPrime(int n) {

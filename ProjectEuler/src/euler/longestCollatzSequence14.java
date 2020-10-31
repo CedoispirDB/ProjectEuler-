@@ -1,4 +1,5 @@
 package euler;
+import utils.tools;
 
 public class longestCollatzSequence14 {
     //Count how many numbers there is in the chain

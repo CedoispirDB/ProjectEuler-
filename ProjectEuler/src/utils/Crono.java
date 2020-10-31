@@ -1,3 +1,5 @@
+package utils;
+
 public class Crono {
 
     private long startTime;

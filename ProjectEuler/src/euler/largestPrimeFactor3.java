@@ -1,4 +1,5 @@
 package euler;
+import utils.tools;
 
 public class largestPrimeFactor3 {
     public static double factors(long x) {

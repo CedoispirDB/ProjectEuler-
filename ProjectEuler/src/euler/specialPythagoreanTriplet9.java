@@ -1,4 +1,6 @@
 package euler;
+import utils.tools;
+
 
 public class specialPythagoreanTriplet9 {
     public static void pythagoreanTheorem() {

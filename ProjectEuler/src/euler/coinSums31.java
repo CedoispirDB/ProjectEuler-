@@ -1,6 +1,9 @@
 package euler;
+import utils.tools;
+
 
 public class coinSums31 {
+
     // 1p, 2p, 5p, 10p, 20p, 50p, £1 (100p), and £2 (200p).
     // 200p
     // a + 2b + 5c + 10w + 20x + 50y + 100z = 200

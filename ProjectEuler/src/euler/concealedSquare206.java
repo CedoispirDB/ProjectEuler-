@@ -1,6 +1,8 @@
 package euler;
 
 import java.math.BigInteger;
+import utils.tools;
+
 
 public class concealedSquare206 {
 

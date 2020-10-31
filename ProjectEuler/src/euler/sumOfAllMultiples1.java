@@ -1,4 +1,6 @@
 package euler;
+import utils.tools;
+
 
 public class sumOfAllMultiples1 {
     public static int checkForMultiples(int x, int y, int w) {

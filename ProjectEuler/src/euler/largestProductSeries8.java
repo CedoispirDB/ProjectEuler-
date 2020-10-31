@@ -1,4 +1,5 @@
 package euler;
+import utils.tools;
 
 public class largestProductSeries8 {
     public static long ps(String series) {

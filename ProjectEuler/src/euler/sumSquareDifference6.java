@@ -1,4 +1,6 @@
 package euler;
+import utils.tools;
+
 
 public class sumSquareDifference6 {
     public static void p() {

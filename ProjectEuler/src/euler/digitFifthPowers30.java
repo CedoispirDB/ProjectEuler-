@@ -1,4 +1,5 @@
 package euler;
+import utils.tools;
 
 public class digitFifthPowers30 {
     private static long sumOfPowers(){

@@ -1,5 +1,8 @@
 package euler;
 
+import utils.Crono;
+import utils.tools;
+
 public class highlyDivisibleTriangularNumber12 {
 
     public static int findTheQuantityOfDivisors(long x) {

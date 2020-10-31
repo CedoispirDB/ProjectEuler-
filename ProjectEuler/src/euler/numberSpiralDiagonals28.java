@@ -1,5 +1,7 @@
 package euler;
 
+import utils.tools;
+
 public class numberSpiralDiagonals28 {
     private static int sumOfDiagonals(int limit){
         int  sum = 1;

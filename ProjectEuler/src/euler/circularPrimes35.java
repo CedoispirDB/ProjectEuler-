@@ -2,6 +2,8 @@ package euler;
 
 import java.util.LinkedList;
 import java.util.List;
+import utils.tools;
+
 
 public class circularPrimes35 {
 

@@ -2,6 +2,7 @@ package euler;
 
 import java.util.Arrays;
 import java.util.List;
+import utils.tools;
 
 public class largestProductGrid11 {
 

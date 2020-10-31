@@ -1,4 +1,5 @@
 package euler;
+import utils.tools;
 
 public class latticePaths15 {
 
