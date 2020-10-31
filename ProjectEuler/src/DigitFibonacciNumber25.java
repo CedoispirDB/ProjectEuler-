@@ -1,103 +1,80 @@
-import java.util.IllegalFormatCodePointException;
-import java.util.LinkedList;
-import java.util.List;
-
 public class DigitFibonacciNumber25 {
 
-    private static void sumOfStrings(String a, String b) {
-        List<Integer> listA = new LinkedList<>();
-        List<Integer> listB = new LinkedList<>();
-        List<Integer> result = new LinkedList<>();
-
-        int firstNumber;
-        int secondNumber;
-        int comparison = 0;
+    private static String sumOfStrings(String a, String b, int remainder, String result) {
+        int k;
+        int p;
         int sum;
-        int tenth;
-        int unit;
-        int rest = 0;
+        int r;
+        String sumStr;
+        String newB;
+        String newA;
 
-        if (a.length() > b.length()) {
-            comparison = a.length() - b.length();
-        } else if (a.length() < b.length()) {
-            comparison = b.length() - a.length();
+        if (a.equals("") && b.equals("")) {
+            return result;
         }
 
-        if (a.length() > b.length()) {
-            do {
-                listB.add(0);
-            } while (listB.size() != comparison);
+        if (a.equals("")) {
+            k = 0;
+            newA = "";
+        } else {
+            k = Integer.parseInt(String.valueOf(a.charAt(a.length() - 1)));
+            newA = a.substring(0, a.length() - 1);
+        }
 
-        } else if (a.length() < b.length()) {
-            do {
-                listA.add(0);
-            } while (listA.size() != comparison);
+        if (b.equals("")) {
+            p = 0;
+            newB = "";
+        } else {
+            p = Integer.parseInt(String.valueOf(b.charAt(b.length() - 1)));
+            newB = b.substring(0, b.length() - 1);
 
         }
 
-        for (int i = 0; i < a.length(); i++) {
-            listA.add(Integer.parseInt(String.valueOf(a.charAt(i))));//
+        sum = k + p + remainder;
+        sumStr = String.valueOf(sum);
+
+        if (sumStr.length() == 1 || sumStr.length() == 0) {
+            r = 0;
+        } else {
+            r = Integer.parseInt(sumStr.substring(0, sumStr.length() - 1));
         }
-        for (int i = 0; i < b.length(); i++) {
-            listB.add(Integer.parseInt(String.valueOf(b.charAt(i))));
-        }
 
-        for (int i = listA.size() - 1; i >= 0; i--) {
-            firstNumber = listA.get(i);
-            secondNumber = listB.get(i);
-            sum = firstNumber + secondNumber + rest;
-            /*
-            if (firstNumber >= secondNumber && sum >= 10) {
-
-                tenth = String.valueOf(sum).charAt(0);
-                unit = String.valueOf(sum).charAt(1);
-                result.add(tenth);
-                result.add(unit);
-            } else {
-                result.add(sum);
-            }
-        */
-            result.add(sum);
-            if (result.indexOf(0) == 0){
-                result.remove(0);
-                result.add(0);
-
-            }
+        if (newA.equals("") && newB.equals("") && r > 0) {
+            return String.valueOf(r) + sumStr.charAt(sumStr.length() - 1) + result;
 
         }
 
 
-        listA.forEach(System.out::print);
-        tools.l(" ");
-        listB.forEach(System.out::print);
-        tools.l(" ");
-        result.forEach(System.out::print);
-
-
+        return sumOfStrings(newA, newB, r, (sumStr.charAt(sumStr.length() - 1) + result));
     }
 
     public static long fibonacciSequence() {
-        long a1 = 1;
-        long a2 = 0;
-        long sum;
-        boolean found = true;
+
+        int count = 1;
+        String strSum;
+        String a1str = "1";
+        String a2str = "";
+        //tools.d("\n" + "Fibonacci sequence: " + "\n");
         do {
-            sum = a1 + a2;
-            a1 = a2;
-            a2 = sum;
-            String strSum = String.valueOf(sum);
+           // tools.d("\n a1: " + a1str + " \n a2: " + a2str + "\n sum: " + strSum + "\n\n" );
+            //tools.d(count + ": " + strSum + "\n");
+
+            strSum = sumOfStrings(a1str, a2str, 0, "");
+            a1str = a2str;
+            a2str = strSum;
 
 
-            if (strSum.length() == 1000) {
-                tools.d("a");
-                found = false;
-            }
-        } while (found);
+            //tools.d("\n" + "Sum length: " + String.valueOf(strSum).length() + "\n" + "sum:" + strSum + "\n");
+            tools.d(count + "-) " + strSum + "\n");
+            //strSum.length() <= 1000
+            count++;
+        } while (strSum.length() < 1000);
 
-        return sum;
+        return count - 1;
     }
 
     public static void main(String[] args) {
-        sumOfStrings("90", "91");
+        tools.d(fibonacciSequence());
+
     }
 }
