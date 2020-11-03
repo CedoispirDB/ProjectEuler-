@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class pandigitalProducts32 {
-    private static boolean checkIfPandigital(String number) {
+    public static boolean checkIfPandigital(String number) {
         boolean isPan = false;
         for (int i = 1; i <= 9; i++) {
             if (number.contains(String.valueOf(i))){
