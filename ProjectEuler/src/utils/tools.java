@@ -8,20 +8,12 @@ import java.util.List;
 
 public class tools {
 
+
     //Print a list of Integers
-    public static void l(List<Integer> a, int b) {
-        a.forEach(System.out::println);
+    public static void l(List<Long> k) {
+        k.forEach(System.out :: println);
     }
 
-    //Print a list of Longs
-    public static void l(List<Long> k, long l) {
-        k.forEach(System.out::println);
-    }
-
-    //Print a list of Strings
-    public static void l(List<String> c) {
-        c.forEach(System.out::println);
-    }
 
     //Formatting a number
     public static void format(double in) {
@@ -78,7 +70,7 @@ public class tools {
         } else {
             d("Number: " + x + " is not prime." + "\n" + "and its divisors are: ");
         }
-        l(divisors, 0L);
+        l(divisors);
 
     }
 
@@ -123,7 +115,7 @@ public class tools {
 
 
     //Find the sum of all the divisors of a number
-    public static long sumOfDivisors(long x){
+    public static long sumOfDivisors(long x) {
         long sumOfDivisors = 0;
         for (long i = 1; i < x; i++) {
             if (x % i == 0) {
@@ -150,8 +142,12 @@ public class tools {
 
 
     public static void main(String[] args) {
-        isItPrime(93, 0);
+        List<Integer> n = new LinkedList<>();
+        for (int i = 0; i <= 10; i++) {
+            n.add(i);
 
+        }
+ //        n.forEach(System.out::println);
     }
 }
 
