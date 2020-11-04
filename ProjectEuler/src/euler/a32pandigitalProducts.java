@@ -8,6 +8,9 @@ import java.util.List;
 public class a32pandigitalProducts {
     public static boolean checkIfPandigital(String number) {
         boolean isPan = false;
+        if (number.length() != 9){
+            return false;
+        }
         for (int i = 1; i <= 9; i++) {
             if (number.contains(String.valueOf(i))){
                 isPan = true;
