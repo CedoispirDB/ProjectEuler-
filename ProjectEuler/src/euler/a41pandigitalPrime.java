@@ -1,13 +1,8 @@
-package utils;
+package euler;
 
 import utils.tools;
 
-import java.util.LinkedList;
-import java.util.List;
-
-
-public class Tests {
-
+public class a41pandigitalPrime {
     private static boolean findPans(String x) {
         int greatstN = 0;
         for (int i = 9; i >= 0; i--) {
@@ -33,11 +28,11 @@ public class Tests {
     }
 
     private static int findPanPrime() {
-        int greatestPrime = 10000000;
-        for (int i = 10000000; i > 7126543; i--) {
-            if (tools.isItPrime(i)) {
-                if (findPans(String.valueOf(i))) {
-                    if (i < greatestPrime) {
+        int greatestPrime= 0;
+        for (int i = 0; i <= 10000000; i++) {
+            if (tools.isItPrime(i)){
+                if (findPans(String.valueOf(i))){
+                    if (i > greatestPrime){
                         tools.d(i);
                         greatestPrime = i;
                     }
@@ -49,13 +44,7 @@ public class Tests {
     }
 
     public static void main(String[] args) {
+        // 4 hours tho
         tools.d(findPanPrime());
     }
-
-
 }
-
-
-
-
-

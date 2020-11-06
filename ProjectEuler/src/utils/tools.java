@@ -3,6 +3,7 @@ package utils;
 import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class tools {
 
     //Print a list of Integers
     public static void l(List<Long> k) {
-        k.forEach(System.out :: println);
+        k.forEach(System.out::println);
     }
 
 
@@ -142,12 +143,10 @@ public class tools {
 
 
     public static void main(String[] args) {
-        List<Integer> n = new LinkedList<>();
-        for (int i = 0; i <= 10; i++) {
-            n.add(i);
-
+        List<Integer> n = Arrays.asList(1423, 2143, 2341, 4231);
+        for (int h : n) {
+            d(isItPrime(h));
         }
- //        n.forEach(System.out::println);
     }
 }
 
