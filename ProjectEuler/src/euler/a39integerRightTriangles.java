@@ -1,11 +1,11 @@
-package utils;
+package euler;
 
 import utils.tools;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class Tests {
+public class a39integerRightTriangles {
 
     //Check if the lengths forms a right triangle
     private static boolean findRightTriangle(int a, int b, int c) {
@@ -47,17 +47,18 @@ public class Tests {
     }
 
     //Find all sums in the range p <= 1000
-    private static int totalNP(){
-        int amount = 0;
+    private static long totalNP() {
         int solutions;
+        int amount = 0;
+        int result = 0;
         for (int p = 1; p <= 1000; p++) {
             solutions = numOfSolutions(p);
-            if (solutions > amount){
+            if (solutions > amount) {
                 amount = solutions;
+                result = p;
             }
-
         }
-        return amount;
+        return result;
     }
 
     public static void main(String[] args) {
