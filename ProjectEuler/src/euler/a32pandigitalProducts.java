@@ -42,7 +42,6 @@ public class a32pandigitalProducts {
 
     public static void main(String[] args) {
         tools.d(sumOfProducts());
-//        tools.d(checkIfPandigital("198765431"));
     }
 
 }
