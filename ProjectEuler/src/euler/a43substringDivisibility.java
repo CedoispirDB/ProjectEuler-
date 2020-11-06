@@ -85,8 +85,8 @@ public class a43substringDivisibility {
 
     //Sum all numbers with that property
     private static long sumOfNum() {
-        long sum = 4297667445L;
-        for (long i = 1460357290; i <= 9000000000L; i++) {
+        long sum = 0;
+        for (long i = 1000000000; i <= 9000000000L; i++) {
             if (i % 1000000000L == 0) {
                 tools.d("We are at: " + i + " || with sum:" + sum);
 
