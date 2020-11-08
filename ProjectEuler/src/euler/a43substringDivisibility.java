@@ -99,23 +99,9 @@ public class a43substringDivisibility {
         }
         return sum;
     }
-
-    // i: 1406357289 sum: 1406357289
-// i: 1430952867 sum: 2837310156
-// i: 1460357289 sum: 4297667445
     public static void main(String[] args) {
         tools.d(sumOfNum());
-        //1406357289
-//        for (long i = 4000000000L; i <= 5000000000L; i++) {
-//
-//            tools.d("For: " + i +": " + substringDiv((int) i ));
-//
-//
-//        }
 
-        //4195091684
-//        tools.d( substringDiv((int)  4 195 091 685L));
-        //tools.d(checkIfPandigital("4000000000"));
     }
 
 
