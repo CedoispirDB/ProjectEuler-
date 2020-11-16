@@ -61,7 +61,7 @@ public class a33digitCancellingFractions {
 
             }
         }
-        return mathTools.simplifyNum(nProduct, dProduct);
+        return mathTools.simplifyNum2(nProduct, dProduct);
     }
 
 
