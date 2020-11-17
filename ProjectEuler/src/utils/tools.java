@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -143,10 +144,6 @@ public class tools {
 
 
     public static void main(String[] args) {
-        List<Integer> n = Arrays.asList(1423, 2143, 2341, 4231);
-        for (int h : n) {
-            d(isItPrime(h));
-        }
     }
 }
 

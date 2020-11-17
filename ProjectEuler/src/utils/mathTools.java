@@ -99,11 +99,9 @@ public class mathTools {
 
     //Function to simplify numbers returns a String
     public static String simplifyNum2(int n, int d) {
-        List<Integer> fraction = new LinkedList<>();
         int min = Math.min(n, d);
         if (n % d == 0) {
-            fraction.add(n);
-            fraction.add(d);
+
             return n + "/" + d;
 
         }
@@ -120,8 +118,6 @@ public class mathTools {
             }
 
         }
-        fraction.add(n);
-        fraction.add(d);
         return n + "/" + d;
     }
 

@@ -1,6 +1,11 @@
+package euler;
+
 import utils.tools;
 
-public class eulersTotientFunction {
+import java.util.LinkedList;
+import java.util.List;
+
+public class a69totientMaximum {
 
     private static boolean compareMultiples(int a, int b) {
         boolean sameMultiples = false;
@@ -31,9 +36,31 @@ public class eulersTotientFunction {
         return phi;
     }
 
-    public static void main(String[] args) {
-        for (int i = 1; i <= 10; i++) {
-            tools.d("For " + i + ": " + totientFunction(i));
+    private static double findMax() {
+        List<Double> nPhi = new LinkedList<>();
+        double max = 0;
+        double quotient;
+        double check = 0;
+
+        for (double n = 2; n <= 1000000; n++) {
+            quotient = n / totientFunction((int) n);
+            nPhi.add(quotient);
         }
+
+        for (double k : nPhi) {
+            if (k > check) {
+                check = k;
+                max = k;
+            }
+        }
+
+        return max;
+    }
+
+    public static void main(String[] args) {
+
+        tools.d(findMax());
+
     }
 }
+
