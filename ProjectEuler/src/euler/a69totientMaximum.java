@@ -58,7 +58,7 @@ public class a69totientMaximum {
     }
 
     public static void main(String[] args) {
-
+        // Im returning the max I need n fk
         tools.d(findMax());
 
     }

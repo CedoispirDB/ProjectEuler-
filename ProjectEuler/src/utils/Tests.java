@@ -5,72 +5,110 @@ import java.util.List;
 
 public class Tests {
 
-
-    private static List<Integer> divFraction(double n1, double d1, double n2, double d2) {
-        double n = n1 * d2;
-        double d = d1 * n2;
-        return mathTools.simplifyNum((int) n, (int) d);
-    }
-
-    private static List<Integer> sumFractions(double n1, double d1, double n2, double d2) {
-        List<Integer> fraction = new LinkedList<>();
-        double cf = mathTools.leastCommonDenominator(d1, d2);
-        double result;
-        n1 = n1 * (cf / d1);
-        n2 = n2 * (cf / d2);
-        result = n1 + n2;
-
-        if (result % cf == 0) {
-            fraction.add((int) (result / cf));
-            fraction.add(1);
-            return fraction;
+    private static boolean compareMultiples(int a, int b) {
+        boolean sameMultiples = false;
+        boolean leave = false;
+        if (Math.max(a,b) % Math.min(a,b) == 0){
+            return true;
         }
-        return mathTools.simplifyNum((int) result, (int) cf);
-    }
-
-    private static List<Integer> expansion(int n, int d, int pos, int count) {
-
-        if (pos == 0) {
-            return sumFractions(1, 1, 1, 2);
-        }
-        if (count >= pos) {
-            return sumFractions(1, 1, n, d);
-        }
-        List<Integer> sumFrac = sumFractions(2, 1, n, d);
-        n = sumFrac.get(0);
-        d = sumFrac.get(1);
-
-        List<Integer> divFrac = divFraction(1, 1, n, d);
-
-        n = divFrac.get(0);
-        d = divFrac.get(1);
-        count++;
-        return expansion(n, d, pos, count);
-    }
-
-    private static int weirdExpansion() {
-        int count = 0;
-        int n;
-        int d;
-
-        for (int i = 0; i < 1000; i++) {
-            List<Integer> k =  expansion(1, 2, i,   0);
-            if (k.toArray().length != 1) {
-                n = k.get(0);
-                d = k.get(1);
-                if (String.valueOf(n).length() > String.valueOf(d).length()) {
-                    count++;
-                    tools.d(count + " expansion: " + k);
-
+        for (int i = 1; i <= a; i++) {
+            for (int k = 2; k <= b; k++) {
+                if (a % i == 0 && b % k == 0 && i == k) {
+                    sameMultiples = true;
+                    leave = true;
+                    break;
                 }
             }
+            if (leave) {
+                break;
+            }
         }
-        return count;
+        return sameMultiples;
+    }
+
+    private static int totientFunction(int k) {
+        int phi = 0;
+        for (int i = 1; i <= k; i++) {
+            if (!compareMultiples(i, k)) {
+                phi++;
+            }
+
+        }
+        return phi;
+    }
+
+
+
+    private static double findMax(int limit) {
+        List<Double> nPhi = new LinkedList<>();
+        List<Integer> n = new LinkedList<>();
+        double max;
+        double quotient;
+        double quotient2;
+        double check = 0;
+
+        for (int i = 2; i <= limit; i++) {
+            n.add(i);
+        }
+
+//        tools.d(n.size());
+//        n.forEach(System.out :: println);
+
+        for (int k = 0; k < (n.size() / 2) + 1; k++) {
+            quotient = n.get(k) / (double) totientFunction(n.get(k));
+//            tools.d("k: " + (k + 1));
+//            tools.d("quotient: " + quotient);
+            quotient2 = n.get(n.size() - k - 1) / (double) totientFunction(n.get(n.size() - k - 1));
+//            tools.d("quotient2: " + quotient2 + "\n");
+            max = Math.max(quotient, quotient2);
+
+            if (max > check) {
+                check = max;
+            }
+        }
+
+//        for (double k : nPhi) {
+//            if (k > check) {
+//                check = k;
+//                max = k;
+//            }
+//        }
+
+        return check;
     }
 
     public static void main(String[] args) {
-        tools.d(weirdExpansion());
+        tools.d("Max: " + findMax(1000000));
 
+//        List<Integer> k = new LinkedList<>();
+//        k.add(2);
+//        int a;
+//        int b;
+//        int max;
+//        int check = 0;
+//        // 10 - 9; 8 - 6; 1 -4; 2 - 3; 5-7
+//        for (int i = 0; i < k.size(); i++) {
+//
+//            a = k.get(i);
+////            tools.d("a: " + a);
+//            b = k.get(k.size() - i - 1);
+////            tools.d("b: " + b);
+//
+//            max = Math.max(a, b);
+//
+//            if (max > check) {
+//                check = max;
+//            }
+
+//        }
+
+//        tools.d(check);
+//        tools.d(totientFunction(999998));
+//        for (int i = 2; i <= 1000 ; i++) {
+//            tools.d(totientFunction(i));
+//        }
     }
+
+
 
 }

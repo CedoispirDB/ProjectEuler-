@@ -32,8 +32,10 @@ public class eulersTotientFunction {
     }
 
     public static void main(String[] args) {
-        for (int i = 1; i <= 10; i++) {
-            tools.d("For " + i + ": " + totientFunction(i));
-        }
+//        for (double i = 2; i <= 50; i++) {
+//            tools.d("For " + (int) i + ": " + (i  / (double)totientFunction((int)i)));
+//        }
+        tools.d("Start");
+        tools.d(totientFunction(999998));
     }
 }

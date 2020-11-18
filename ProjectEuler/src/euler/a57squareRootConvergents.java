@@ -30,18 +30,18 @@ public class a57squareRootConvergents {
         return mathTools.simplifyNum((int) result, (int) cf);
     }
 
-    private static List<Integer> expansion(int n, int d, int pos, int count) {
-
-        if (pos == 0) {
-            return sumFractions(1, 1, 1, 2);
-        }
-        if (count >= pos) {
-            return sumFractions(1, 1, n, d);
-        }
-
-        count++;
-        return expansion(n, d, pos, count);
-    }
+//    private static List<Integer> expansion(int n, int d, int pos, int count) {
+//
+//        if (pos == 0) {
+//            return sumFractions(1, 1, 1, 2);
+//        }
+//        if (count >= pos) {
+//            return sumFractions(1, 1, n, d);
+//        }
+//
+//        count++;
+//        return expansion(n, d, pos, count);
+//    }
 
     private static int weirdExpansion() {
         int count = 0;
@@ -51,31 +51,46 @@ public class a57squareRootConvergents {
         int d2;
         int i = 0;
         do {
-            List<Integer> k = expansion(n, d, i, i);
+//            List<Integer> k = expansion(n, d, i, i);
+
+            if (i == 0) {
+                tools.d((i + 2) + ": " + "1 + " + n + "/" + d + " " + sumFractions(1, 1, n, d));
+            }
 
             List<Integer> sumFrac = sumFractions(2, 1, n, d);
             n = sumFrac.get(0);
             d = sumFrac.get(1);
 
-            List<Integer> divFrac = divFraction(1, 1, n, d);
+            n2 = n;
+            n = d;
+            d = n2;
 
-            n = divFrac.get(0);
-            d = divFrac.get(1);
+            tools.d((i + 2) + ": " + "1 + " + n + "/" + d + " " + sumFractions(1, 1, n, d));
 
-            n2 = k.get(0);
-            d2 = k.get(1);
+            String x = String.valueOf(sumFractions(1, 1, n, d).get(0));
+            String y = String.valueOf(sumFractions(1, 1, n, d).get(1));
 
-
-            if (String.valueOf(n2).length() > String.valueOf(d2).length()) {
-                count++;
+            if (x.length() > y.length() && x.length() != 2 && y.length() != 1) {
                 tools.i("");
-                tools.d(count + " expansion: " + k + "\n");
-            } else {
-                tools.d(i + " expansion: " + k);
+                tools.d("n: "+ sumFractions(1, 1, n, d).get(0));
+                tools.d("d: " + sumFractions(1, 1, n, d).get(1) + "\n");
+
+
+                count++;
             }
 
+//            n2 = k.get(0);
+//            d2 = k.get(1);
+
+
+//            if (String.valueOf(n2).length() > String.valueOf(d2).length()) {
+//                count++;
+//            } else {
+//                tools.d((i+1 )+ " expansion: " + k);
+//            }
+
             i++;
-        } while (i < 1000);
+        } while (i <= 1000);
         return count;
     }
 
@@ -90,3 +105,5 @@ public class a57squareRootConvergents {
 // 27:
 
 // first answer: 191
+
+//2020-11-18 10:42:10.462 : 859: 1 + 3/1 [4, 3]
