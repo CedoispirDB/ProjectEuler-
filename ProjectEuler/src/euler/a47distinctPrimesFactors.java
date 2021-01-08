@@ -1,48 +1,62 @@
-//package euler;
-//
-//import utils.tools;
-//
-//import java.util.LinkedList;
-//import java.util.List;
-//
-//public class a47distinctPrimesFactors {
-//    private static int consecutiveIntegers() {
-//        List<Integer> primes = new LinkedList<>();
-//        for (int i = 1; i <= 50; i++) {
-//            if (tools.isItPrime(i)) {
-//                primes.add(i);
-//            }
-//        }
-//
-////        primes.forEach(System.out :: println);
-//        int past = 0;
-//        int product = 0;
-//        int count = 0;
-//        for (int a1 : primes) {
-//            for (int a2 : primes) {
-//                    product = a1 * a2 ;
-//                    tools.d(a1 + " x " + a2 + " = " + product);
-//                    if (product == past + 1) {
-//                        past = product;
-//                        count++;
-//                        if (count == 4) {
-//                            tools.d(count);
-//                            return product - 3;
-//                        }
-//
-//
-//
-//                }
-//
-//            }
-//
-//        }
-//
-//        return product - 3;
-//    }
-//
-//    public static void main(String[] args) {
-//        tools.d(consecutiveIntegers());
-//    }
-//}
-//
+package euler;
+
+import utils.tools;
+import utils.mathTools;
+public class a47distinctPrimesFactors {
+
+
+    private static void consecutiveNumbers() {
+        int n = 0;
+        int consecutive = 0;
+        int numberOfFactors = 4;
+        int firstN = 0;
+        int secondN = 0;
+        int thirdN = 0;
+        int fourthN = 0;
+
+        do {
+            do {
+                n++;
+                if (!tools.isItPrime(n)) {
+                    if (mathTools.primeFactors(n) >= numberOfFactors) {
+                        consecutive++;
+                        if (firstN == 0) {
+                            firstN = n;
+                        } else if (secondN == 0) {
+                            secondN = n;
+                        } else if (thirdN == 0) {
+                            thirdN = n;
+                        } else if (fourthN == 0) {
+                            fourthN = n;
+                        }
+                    } else {
+                        consecutive = 0;
+                        firstN = 0;
+                        secondN = 0;
+                        thirdN = 0;
+                        fourthN = 0;
+                    }
+                }
+
+
+            } while (consecutive < numberOfFactors);
+
+            if (firstN == secondN - 1 && secondN == thirdN - 1 && thirdN == fourthN - 1){
+                tools.d(firstN);
+                tools.d(secondN);
+                tools.d(thirdN);
+                tools.d(fourthN);
+                break;
+            }
+
+
+        } while (true);
+    }
+
+    public static void main(String[] args) {
+        consecutiveNumbers();
+    }
+}
+
+
+
