@@ -124,11 +124,29 @@ public class mathTools {
     //Function to take the square get a int as parameter
     public static int square(int x) {
         return (int) Math.sqrt(x);
-
     }
 
+    //Function to find how many prime factors a number has
+    public static int primeFactors(int n) {
+        int factors = 0;
+        for (int i = 1; i <= n ; i++) {
+            if (tools.isItPrime(i)) {
+                if (n % i == 0) {
+                    n = n / i;
+                    factors++;
+                }
+            }
+        }
+        return factors;
+    }
+
+
     public static void main(String[] args) {
-        tools.d(simplifyNum(2, 2));
+//        tools.d(simplifyNum(2, 2));
         //tools.d(leastCommonDenominator(15,10));
+        tools.d(primeFactors(61332));
+        tools.d(primeFactors(61334));
+        tools.d(primeFactors(61335));
+        tools.d(primeFactors(61336));
     }
 }

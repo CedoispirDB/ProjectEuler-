@@ -37,6 +37,10 @@ public class tools {
         System.out.println(x);
     }
 
+    public static void i() {
+        System.out.println("");
+    }
+
     //Find if a number is prime or not
     public static boolean isItPrime(long x) {
         long sumOfDivisors = 0;
@@ -144,6 +148,17 @@ public class tools {
 
 
     public static void main(String[] args) {
+        int count = 0;
+        for (int k = 1; k <= 100000000; k++) {
+            tools.d(k);
+            for (int i = 1; i <= k; i++) {
+                if (k % i == 0) {
+
+                }
+            }
+        }
+
+
     }
 }
 

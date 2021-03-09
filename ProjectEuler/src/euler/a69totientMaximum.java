@@ -2,65 +2,68 @@ package euler;
 
 import utils.tools;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class a69totientMaximum {
 
     private static boolean compareMultiples(int a, int b) {
-        boolean sameMultiples = false;
-        boolean leave = false;
-        for (int i = 1; i <= a; i++) {
-            for (int k = 2; k <= b; k++) {
-                if (a % i == 0 && b % k == 0 && i == k) {
-                    sameMultiples = true;
-                    leave = true;
-                    break;
-                }
-            }
-            if (leave) {
-                break;
+        if (Math.max(a, b) % Math.min(a, b) == 0) {
+            return true;
+        }
+
+        for (int i = 2; i <= Math.min(a, b); i++) {
+            if (a % i == 0 && b % i == 0) {
+                return true;
             }
         }
-        return sameMultiples;
+        return false;
     }
 
     private static int totientFunction(int k) {
         int phi = 0;
+        if (k == 1) {
+            return 1;
+        }
+        if (tools.isItPrime(k)) {
+            return k - 1;
+        }
         for (int i = 1; i <= k; i++) {
+            if (i % 100000 == 0) {
+                tools.d("I'm at: " + i);
+            }
+            if (i == 1) {
+                phi++;
+            }
             if (!compareMultiples(i, k)) {
                 phi++;
             }
-
         }
         return phi;
     }
 
     private static double findMax() {
-        List<Double> nPhi = new LinkedList<>();
-        double max = 0;
+        double nMax = 0;
         double quotient;
         double check = 0;
-
         for (double n = 2; n <= 1000000; n++) {
+            if (n % 100000 == 0) {
+                tools.d("I'm at: " + n);
+            }
             quotient = n / totientFunction((int) n);
-            nPhi.add(quotient);
-        }
-
-        for (double k : nPhi) {
-            if (k > check) {
-                check = k;
-                max = k;
+            if (quotient > check) {
+                check = quotient;
+                nMax = n;
+                tools.d("nMax so far: " + nMax + " for: " + quotient + "\n");
             }
         }
-
-        return max;
+        return nMax;
     }
 
     public static void main(String[] args) {
-        // Im returning the max I need n fk
         tools.d(findMax());
-
     }
 }
 
+// 23 min first test with wrong number :/
+// 972637 0.05 miliseconds because is prime
+// 972638 17 minutes
+
+//

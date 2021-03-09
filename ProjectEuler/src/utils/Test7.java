@@ -1,11 +1,9 @@
-package euler;
+package utils;
 
-import utils.tools;
-import utils.mathTools;
-public class a47distinctPrimesFactors {
+public class Test7 {
 
 
-    private static void consecutiveNumbers() {
+    private static void test() {
         int n = 0;
         int consecutive = 0;
         int numberOfFactors = 4;
@@ -54,7 +52,7 @@ public class a47distinctPrimesFactors {
     }
 
     public static void main(String[] args) {
-        consecutiveNumbers();
+        test();
     }
 }
 
