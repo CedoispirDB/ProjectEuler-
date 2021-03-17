@@ -6,7 +6,7 @@ import java.util.List;
 public class mathTools {
 
     // find the greatest common factor
-    private static int findGCD(int a, int b) {
+    public static int findGCD(int a, int b) {
         int gcd = 0;
         int compare = 0;
         for (int i = 1; i <= a; i++) {

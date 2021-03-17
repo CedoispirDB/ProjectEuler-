@@ -2,13 +2,14 @@ import utils.mathTools;
 import utils.tools;
 
 import java.io.BufferedReader;
+import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
-public class test {
+public class test2 {
 
     private static LinkedList<Double> readFile() {
         LinkedList<Double> primes = new LinkedList<>();
@@ -37,8 +38,8 @@ public class test {
         double ans2 = 0;
         double n0 = 3;
         double d0 = 7;
-        double checkN = -1;
-        double checkD = -1;
+        BigDecimal checkN = new BigDecimal(-1);
+        BigDecimal checkD = new BigDecimal(-1);
 
 
         LinkedList<Double> primes = readFile();
@@ -54,39 +55,48 @@ public class test {
 //        tools.d("First step done, list size: " + primes.size());
 //        primes.forEach(System.out::println);
 
-        for (double d = 1; d <= limit; d++) {
-//            tools.d("d: " + d);
-            for (double n : primes) {
-                if (n < d) {
-                    if ((d * n0) > (n * d0) && (d * checkN) < (n * checkD)) {
-                        tools.d("Div: " + n + "/" + d);
-                        tools.d("(d * 3) = " + (d * n0) + " & " + "(n * 7) = " + (n * d0));
-                        tools.d("(n * " + checkD + ") = " + (n * checkD) + " & " + "(d * " + checkN + ") = " + (d * checkN));
-                        tools.d((d * n0) + " > " + (n * d0) + " & " + (d * checkN) + " < " + (n * checkD));
-                        tools.i();
-                        // n/d < 3/7
-                        ans = n;
-                        ans2 = d;
+//        for (double n = 1; n <= limit; n++) {
+//            for (double d : primes) {
+////            tools.d("d: " + d);
+//
+//                if (n < d) {
+//                    if ((d * n0) > (n * d0) && (checkN.multiply(new BigDecimal(d)).compareTo(checkD.multiply(new BigDecimal(n))) < 0)) {
+//                        tools.d("Div: " + n + "/" + d);
+//                        tools.d("(d * 3) = " + (d * n0) + " & " + "(n * 7) = " + (n * d0));
+////                        tools.d("(n * " + checkD + ") = " + (n * checkD) + " & " + "(d * " + checkN + ") = " + (d * checkN));
+////                        tools.d((d * n0) + " > " + (n * d0) + " & " + (d * checkN) + " < " + (n * checkD));
+//                        tools.i();
+//                        // n/d < 3/7
+//                        ans = n;
+//                        ans2 = d;
+//
+//                        checkD = new BigDecimal(d);
+//                        checkN = new BigDecimal(n);
+//
+//
+//                    }
+//                }
+//            }
+//
+//        }
 
-                        checkD = d;
-                        checkN = n;
-                    }
-                }
-            }
-        }
+
 
         tools.i();
         tools.d("First n: " + ans);
         tools.d("First d: " + ans2);
         tools.d("First ans: " + ans);
         tools.i();
+//        System.exit(0);
 
-        for (double d : primes) {
+        for (double d = 1; d <= limit; d++) {
 //            tools.d("d: " + d);
-            for (double n = 1; n <= limit; n++) {
+            for (double n : primes) {
                 if (n < d) {
-                    if ((d * n0) > (n * d0) && (d * checkN) < (n * checkD)) {
-//                        tools.d("Div: " + n + "/" + d);
+                    tools.d("Div1: " + n + "/" + d);
+                    tools.d("Div2: " + d + "/" + n);
+                    if ((d * n0) > (n * d0) && (checkN.multiply(new BigDecimal(d)).compareTo(checkD.multiply(new BigDecimal(n))) < 0)) {
+                        tools.d("Div: " + n + "/" + d);
 //                        tools.d("(d * 3) = " + (d * n0) + " & " + "(n * 7) = " + (n * d0));
 //                        tools.d("(n * " + checkD + ") = " + (n * checkD) + " & " + "(d * " + checkN + ") = " + (d * checkN));
 //                        tools.d((d * n0) + " > " + (n * d0) + " & " + (d * checkN) + " < " + (n * checkD));
@@ -94,15 +104,12 @@ public class test {
                         // n/d < 3/7
                         ans = n;
                         ans2 = d;
-
-                        checkD = d;
-                        checkN = n;
-
-
+//
+                        checkD = new BigDecimal(d);
+                        checkN = new BigDecimal(n);
                     }
                 }
             }
-
         }
         tools.i();
         tools.d("Second n: " + ans);

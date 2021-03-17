@@ -46,6 +46,7 @@ public class tools {
         long sumOfDivisors = 0;
         for (long i = 1; i < x; i++) {
             if (x % i == 0) {
+                tools.d(i);
                 sumOfDivisors += i;
                 if (sumOfDivisors > 1) {
                     return false;
@@ -148,17 +149,7 @@ public class tools {
 
 
     public static void main(String[] args) {
-        int count = 0;
-        for (int k = 1; k <= 100000000; k++) {
-            tools.d(k);
-            for (int i = 1; i <= k; i++) {
-                if (k % i == 0) {
-
-                }
-            }
-        }
-
-
+        d(isItPrime(999997));
     }
 }
 
