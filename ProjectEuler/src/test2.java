@@ -3,6 +3,8 @@ import utils.tools;
 
 import java.io.BufferedReader;
 import java.math.BigDecimal;
+import java.math.MathContext;
+import java.text.DecimalFormat;
 import java.util.LinkedList;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -16,7 +18,7 @@ public class test2 {
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(
-                    "/Users/marcobarreirinhas1/Programs/Java/CodeProjects/ProjectEuler-/ProjectEuler/PrimeNumbers.txt"));
+                    "/Users/marcobarreirinhas1/Programs/Java/CodeProjects/ProjectEuler-/ProjectEuler/PrimeNumbers2.txt"));
             String line = reader.readLine();
             while (line != null) {
                 primes.add(Double.parseDouble(line));
@@ -55,56 +57,32 @@ public class test2 {
 //        tools.d("First step done, list size: " + primes.size());
 //        primes.forEach(System.out::println);
 
-//        for (double n = 1; n <= limit; n++) {
-//            for (double d : primes) {
-////            tools.d("d: " + d);
-//
-//                if (n < d) {
-//                    if ((d * n0) > (n * d0) && (checkN.multiply(new BigDecimal(d)).compareTo(checkD.multiply(new BigDecimal(n))) < 0)) {
-//                        tools.d("Div: " + n + "/" + d);
-//                        tools.d("(d * 3) = " + (d * n0) + " & " + "(n * 7) = " + (n * d0));
-////                        tools.d("(n * " + checkD + ") = " + (n * checkD) + " & " + "(d * " + checkN + ") = " + (d * checkN));
-////                        tools.d((d * n0) + " > " + (n * d0) + " & " + (d * checkN) + " < " + (n * checkD));
-//                        tools.i();
-//                        // n/d < 3/7
-//                        ans = n;
-//                        ans2 = d;
-//
-//                        checkD = new BigDecimal(d);
-//                        checkN = new BigDecimal(n);
-//
-//
-//                    }
-//                }
-//            }
-//
-//        }
-
-
-
-        tools.i();
-        tools.d("First n: " + ans);
-        tools.d("First d: " + ans2);
-        tools.d("First ans: " + ans);
-        tools.i();
-//        System.exit(0);
-
-        for (double d = 1; d <= limit; d++) {
+        int m = 0;
+        for (double d = limit ; d >= 0; d--) {
 //            tools.d("d: " + d);
+            m ++;
+            if (m == 50) {
+                System.exit(0);
+            }
             for (double n : primes) {
                 if (n < d) {
-                    tools.d("Div1: " + n + "/" + d);
-                    tools.d("Div2: " + d + "/" + n);
-                    if ((d * n0) > (n * d0) && (checkN.multiply(new BigDecimal(d)).compareTo(checkD.multiply(new BigDecimal(n))) < 0)) {
-                        tools.d("Div: " + n + "/" + d);
-//                        tools.d("(d * 3) = " + (d * n0) + " & " + "(n * 7) = " + (n * d0));
-//                        tools.d("(n * " + checkD + ") = " + (n * checkD) + " & " + "(d * " + checkN + ") = " + (d * checkN));
-//                        tools.d((d * n0) + " > " + (n * d0) + " & " + (d * checkN) + " < " + (n * checkD));
-//                        tools.i();
-                        // n/d < 3/7
+                    tools.i();
+//                  tools.d("Div1: " + n + "/" + d);
+                    tools.d("Div2: " + n + "/" + d);
+//                  tools.d("Result1: " +  (n / d));
+                    if ((n / d) < (3.0 / 7.0)) {
+                        tools.d("Result2: " + n / d + "*Less");
+                    } else {
+                        tools.d("Result2: " + n / d);
+                    }
+
+                    tools.d("CheckN: " + checkN + ", CheckD: " + checkD);
+
+                    if (((d * n0) > (n * d0) && (checkN.multiply(new BigDecimal(d)).compareTo(checkD.multiply(new BigDecimal(n))) < 0))) {
+                        tools.d("Div: " + n + "/" + d + ", previous: " + checkN.divide(checkD, MathContext.DECIMAL32));
+
                         ans = n;
                         ans2 = d;
-//
                         checkD = new BigDecimal(d);
                         checkN = new BigDecimal(n);
                     }
@@ -118,3 +96,7 @@ public class test2 {
     }
 
 }
+
+//2021-03-17 13:05:42.337 : First n: 428564.0
+//2021-03-17 13:05:42.338 : First d: 999983.0
+//2021-03-17 13:05:42.338 : First ans: 428564.0
