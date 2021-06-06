@@ -16,6 +16,12 @@ public class a1sumOfAllMultiples {
 
     public static void main(String[] args) {
         tools.i(checkForMultiples(3, 5, 1000));
-
+//        System.out.println(checkForMultiples(3, 5, 1000));
     }
 }
+
+
+
+
+
+//

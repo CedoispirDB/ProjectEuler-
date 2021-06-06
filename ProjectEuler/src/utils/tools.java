@@ -25,7 +25,7 @@ public class tools {
 
     //Print value in the same line line
     public static void d(Object x) {
-        System.out.println(new Timestamp(System.currentTimeMillis()) + " : " + x);
+        System.out.println(new Timestamp(System.currentTimeMillis()) + ": " + x);
     }
 
     public static void d(Object x, int j) {
