@@ -1,6 +1,5 @@
 # ProjectEuler-
 Project 1:
-https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/euler.a1sumOfAllMultiples.java
 https://github.com/CedoispirDB/ProjectEuler-/blob/master/ProjectEuler/src/euler/a1sumOfAllMultiples.java
 
 Project 2: 
