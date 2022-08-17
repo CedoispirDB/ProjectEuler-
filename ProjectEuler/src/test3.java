@@ -5,6 +5,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 import utils.tools;
 
@@ -38,9 +39,18 @@ public class test3 {
     }
 
     public static void main(String arg[]) {
-        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
-        int target = 12;
-        sum_up(numbers, target);
+//        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+//        int target = 12;
+//            sum_up(numbers, target);
+
+        String[] o = new String[3];
+        o[0] = "3";
+        o[1] = "2";
+        o[2] = "1";
+        String[] p = new String[3];
+        p = o;
+        System.out.println(p[0]);
+
     }
 }
 

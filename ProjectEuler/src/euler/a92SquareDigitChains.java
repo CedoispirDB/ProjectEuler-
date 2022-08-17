@@ -4,7 +4,7 @@ import utils.tools;
 
 public class a92SquareDigitChains {
 
-    public static boolean createChain(String initialValue) {
+    private static boolean createChain(String initialValue) {
         int sum = 0;
 
         if (initialValue.equals("89")) {

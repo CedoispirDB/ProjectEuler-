@@ -46,7 +46,6 @@ public class tools {
         long sumOfDivisors = 0;
         for (long i = 1; i < x; i++) {
             if (x % i == 0) {
-                tools.d(i);
                 sumOfDivisors += i;
                 if (sumOfDivisors > 1) {
                     return false;
