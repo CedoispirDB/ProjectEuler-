@@ -8,7 +8,7 @@ public class a80SquareRootDigitalExpansion {
 
         BigDecimal curr;
         BigDecimal sqrt;
-        MathContext mc = new MathContext(101);
+        MathContext mc = new MathContext(120);
 
         int decimal_sum = 0;
 
@@ -17,19 +17,21 @@ public class a80SquareRootDigitalExpansion {
             sqrt = curr.sqrt(mc);
 
             double mod = sqrt.remainder(BigDecimal.ONE).doubleValue();
-            System.out.println("For: " + sqrt + " mod: " + mod);
+            System.out.println("\nFor: " + d + " sqrt: " + sqrt + " sqrt % 1: " + mod);
             if(mod == 0) continue;
-
-            String str = sqrt.toString();
+            String str = sqrt.toString().substring(0, 101);
             
-            System.err.println("Calculating: " + str);
-            for (int i = 0; i < str.length() - 1; i++) {
+            System.out.println("Calculating: " + str);
+            for (int i = 0; i < str.length(); i++) {
                 if (str.charAt(i) == '.') {
                     continue;
                 }
                 decimal_sum += Integer.valueOf(String.valueOf(str.charAt(i)));
                 // System.out.println(i + ") " + str.charAt(i));
             }
+
+            System.out.println("current sum: " + decimal_sum);
+            // break;
 
         }
         System.out.println(decimal_sum);
