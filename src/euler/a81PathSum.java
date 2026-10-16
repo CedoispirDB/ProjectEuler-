@@ -6,7 +6,9 @@ import utils.Loc;
 
 public class a81PathSum {
 
-    private static int min_sum = 0;
+    private static int min_sum = Integer.MAX_VALUE;
+    private static int path_count = 0;
+    private static int[][] dp;
 
     private static int[][] create_matrix_from_file(Path matrix_file, int rows, int cols) {
         int[][] matrix = new int[rows][cols];
@@ -41,22 +43,23 @@ public class a81PathSum {
         return matrix;
     }
 
-    private static void transverse(int[][] matrix, int r, int c, int sum, char dir) {
-        System.out.println("r: " + r + " c: " + c + " -> " + matrix[r][c] + " -> " + sum + "(" + dir + ")");
+    private static void transverse(int[][] matrix) {
+        int row_count = matrix.length;
 
-        if (r >= matrix.length - 1 && c >= matrix[r].length - 1) {
-            System.out.println("Ended path with: " + sum);
-            min_sum = sum;
-        }
+        for (int r = 0; r < row_count; r++) {
+            for (int c = 0; c < matrix[r].length; c++) {
+                int r_i = r - 1;
+                if (r_i < 0) {
+                    r_i = 0;
+                }
 
-        // go right
-        if (c < matrix[r].length - 1) {
-            transverse(matrix, r, c + 1, sum + matrix[r][c], 'r');
-        }
+                int c_i = c - r;
+                if (c_i < 0) {
+                    c_i = 0;
+                }
 
-        // go down
-        if (r < matrix.length - 1) {
-            transverse(matrix, r + 1, c, sum + matrix[r][c], 'd');
+                dp[r][c] = matrix[r][c] + Math.min(dp[r_i][c], dp[r][c_i]);
+            }
         }
     }
 
@@ -66,6 +69,8 @@ public class a81PathSum {
         int rows = 5;
         int cols = 5;
 
+        dp = new int[rows][cols];
+
         int[][] matrix = create_matrix_from_file(matrix_file, rows, cols);
 
         // for (int i = 0; i < matrix.length; i++) {
@@ -74,13 +79,18 @@ public class a81PathSum {
         //     }
         //     System.out.println("");
         // }
-
         int last_row_index = matrix.length - 1;
         int last_col_index = matrix[last_row_index].length - 1;
-        
-        
-        transverse(matrix, 0, 0, 0, 's');
+
+        transverse(matrix);
         System.out.println("min_sum: " + min_sum);
+
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < dp[i].length; j++) {
+                System.out.print(dp[i][j] + " ");
+            }
+            System.out.println("");
+        }
 
     }
 }
