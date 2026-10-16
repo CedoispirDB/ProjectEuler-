@@ -9,8 +9,12 @@ public class Loc {
         return path;
     }
 
-    public static Path getDesktopFile(String name) {
-        return Path.of(System.getProperty("user.home"), "Desktop", name);
+    public static Path getDesktopFile(String file_name) {
+        return Path.of(System.getProperty("user.home"), "Desktop", file_name);
+    }
+
+    public static Path getDataPath(String file_name) {
+        return Path.of("data", file_name);
     }
 
 }
