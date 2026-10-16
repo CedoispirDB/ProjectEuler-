@@ -2,6 +2,7 @@ package euler;
 
 import java.io.IOException;
 import java.nio.file.*;
+import java.util.Arrays;
 import utils.Loc;
 
 public class a81PathSum {
@@ -53,23 +54,30 @@ public class a81PathSum {
                     r_i = 0;
                 }
 
-                int c_i = c - r;
+                int c_i = c - 1;
                 if (c_i < 0) {
                     c_i = 0;
                 }
 
-                dp[r][c] = matrix[r][c] + Math.min(dp[r_i][c], dp[r][c_i]);
+                int min = Math.min(dp[r_i][c], dp[r][c_i]);
+                dp[r][c] = matrix[r][c] + min;
             }
         }
     }
 
     public static void main(String[] args) throws IOException {
-        Path matrix_file = Loc.getDataPath("matrix2.txt");
+        Path matrix_file = Loc.getDataPath("matrix.txt");
 
-        int rows = 5;
-        int cols = 5;
+        int rows = 80;
+        int cols = 80;
 
         dp = new int[rows][cols];
+
+        for (int r = 0; r < rows; r++) {
+            Arrays.fill(dp[r], Integer.MAX_VALUE);
+        }
+
+        dp[0][0] = 0;
 
         int[][] matrix = create_matrix_from_file(matrix_file, rows, cols);
 
@@ -79,18 +87,16 @@ public class a81PathSum {
         //     }
         //     System.out.println("");
         // }
-        int last_row_index = matrix.length - 1;
-        int last_col_index = matrix[last_row_index].length - 1;
 
         transverse(matrix);
-        System.out.println("min_sum: " + min_sum);
-
+        
         for (int i = 0; i < dp.length; i++) {
             for (int j = 0; j < dp[i].length; j++) {
                 System.out.print(dp[i][j] + " ");
             }
             System.out.println("");
         }
+        System.out.println("min_sum: " + dp[rows - 1][cols - 1]);
 
     }
 }
