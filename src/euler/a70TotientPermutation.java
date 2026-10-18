@@ -66,7 +66,7 @@ public class a70TotientPermutation {
         return true;
     }
 
-    public static void main(String[] args) {
+    private static void MySolution() {
         double min_ratio = Double.MAX_VALUE;
         long final_n = 0;
         long max = 10000000;
@@ -91,5 +91,52 @@ public class a70TotientPermutation {
             Log.printfln("%d -> %d", n, t);
         }
         Log.printfln("min_ratio: %f, final_n: %d", min_ratio, final_n);
+
+    }
+
+    // optimization - https://projecteuler.net/thread=70#240
+    private static void EulerSolution() {
+        int max = 10000000;
+
+        int a = 1;
+        int b = 2;
+
+        double min_r = 2;
+        int min_n = 2;
+
+        int pa = PrimeT.prime(a);
+        int pb = PrimeT.prime(b);
+
+        while ((long) pa * pb < max) {
+            int n = pa * pb;
+            int c = (pa - 1) * (pb - 1);
+
+            if (isPermutation(n, c)) {
+                double r = (double) n / c;
+
+                if (r < min_r) {
+                    min_r = r;
+                    min_n = n;
+                }
+            }
+
+            b += 1;
+            pb = PrimeT.prime(b);
+
+            if ((long) pa * pb >= max) {
+                a++;
+                b = a + 1;
+
+                pa = PrimeT.prime(a);
+                pb = PrimeT.prime(b);
+            }
+        }
+
+        Log.println("Solution: " + min_n);
+
+    }
+
+    public static void main(String[] args) {
+        EulerSolution();
     }
 }
