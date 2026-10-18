@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 public class a69totientMaximum {
 
@@ -22,12 +22,12 @@ public class a69totientMaximum {
         if (k == 1) {
             return 1;
         }
-        if (tools.isItPrime(k)) {
+        if (Tools.isItPrime(k)) {
             return k - 1;
         }
         for (int i = 1; i <= k; i++) {
             if (i % 100000 == 0) {
-                tools.d("I'm at: " + i);
+                Tools.d("I'm at: " + i);
             }
             if (i == 1) {
                 phi++;
@@ -45,20 +45,20 @@ public class a69totientMaximum {
         double check = 0;
         for (double n = 2; n <= 1000000; n++) {
             if (n % 100000 == 0) {
-                tools.d("I'm at: " + n);
+                Tools.d("I'm at: " + n);
             }
             quotient = n / totientFunction((int) n);
             if (quotient > check) {
                 check = quotient;
                 nMax = n;
-                tools.d("nMax so far: " + nMax + " for: " + quotient + "\n");
+                Tools.d("nMax so far: " + nMax + " for: " + quotient + "\n");
             }
         }
         return nMax;
     }
 
     public static void main(String[] args) {
-        tools.d(findMax());
+        Tools.d(findMax());
     }
 }
 

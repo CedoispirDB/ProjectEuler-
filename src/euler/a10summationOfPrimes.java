@@ -1,12 +1,12 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 
 public class a10summationOfPrimes {
     public static long sumOfPrimes(long n){
         long x =0;
         for (long i = 0; i<n; i++){
-            if(tools.isItPrime(i)){
+            if(Tools.isItPrime(i)){
                 x += i;
             }
         }
@@ -14,6 +14,6 @@ public class a10summationOfPrimes {
     }
 
     public static void main(String[] args) {
-        tools.d(sumOfPrimes(2000000));
+        Tools.d(sumOfPrimes(2000000));
     }
 }

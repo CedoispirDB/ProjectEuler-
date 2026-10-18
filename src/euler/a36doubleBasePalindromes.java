@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 public class a36doubleBasePalindromes {
 
@@ -51,7 +51,7 @@ public class a36doubleBasePalindromes {
             iStr = String.valueOf(i);
             if (checkForP(iStr)){
                 if (checkForP(intToByte(i))){
-                    tools.d("The sum is: " + sum + " | " + "i: " + i + ", iB: " + intToByte(i));
+                    Tools.d("The sum is: " + sum + " | " + "i: " + i + ", iB: " + intToByte(i));
                     sum += i;
 
                 }
@@ -61,6 +61,6 @@ public class a36doubleBasePalindromes {
     }
 
     public static void main(String[] args) {
-            tools.d(sumOfPN(1000000));
+            Tools.d(sumOfPN(1000000));
     }
 }

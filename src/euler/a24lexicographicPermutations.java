@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 public class a24lexicographicPermutations {
     private static int count = 0;
@@ -13,7 +13,7 @@ public class a24lexicographicPermutations {
             count++;
            //System.out.println("Permutation number " + count + " is " + ans + " ");
             if (count == p) {
-                tools.d(ans);
+                Tools.d(ans);
 
             }
             return count;
@@ -39,7 +39,7 @@ public class a24lexicographicPermutations {
 
     public static void main(String[] args) {
         
-        tools.d(findPermutations("0123456789", "", 1000000));
+        Tools.d(findPermutations("0123456789", "", 1000000));
     }
 
 }

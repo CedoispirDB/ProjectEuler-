@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 public class a719numberSplitting {
 
@@ -17,15 +17,15 @@ public class a719numberSplitting {
             return true;
         }
 
-        tools.i("");
+        Tools.i("");
 
 
         for (int i = 0; i < xS.length(); i++) {
             if (!xS.substring(0, i).isEmpty()) {
                 sum = (Integer.parseInt(xS.substring(0, i)) + Integer.parseInt(xS.substring(i)));
-                tools.d(xS.substring(0, i));
-                tools.d(xS.substring(i));
-                tools.d("sum: " + sum);
+                Tools.d(xS.substring(0, i));
+                Tools.d(xS.substring(i));
+                Tools.d("sum: " + sum);
                 if (sum == x) {
                     return true;
                 }
@@ -70,15 +70,37 @@ public class a719numberSplitting {
             for (int j = d; j < x.length(); j++) {
                 if (!x.substring(j + 1).isEmpty()) {
                     sum = k + i1 + Integer.parseInt(x.substring(j + 1));
-                    tools.d(k + " + " + i1 + " + " + x.substring(j + 1) + " = " + sum);
+                    Tools.d(k + " + " + i1 + " + " + x.substring(j + 1) + " = " + sum);
 
                 }
             }
             d++;
 
-            tools.i();
+            Tools.i();
         }
 
+
+        //  9 8 0 1
+        //  98 01
+        //  980 1
+        //  9 801
+//
+//        for (int i = 0; i < x.length(); i++) {
+////            tools.d(x.substring(i, i + 1));
+//        }
+////        tools.i("");
+//        for (int i = 0; i < x.length() / 2; i++) {
+////            tools.d(x.substring(i, i + 2));
+//        }
+////        tools.d(x.substring(0, 2));
+////        tools.d(x.substring(2));
+//
+////
+////        for (int i = 0; i < x.length(); i++) {
+////            tools.d(x.substring(0, i));
+////            tools.d(x.substring(i));
+////            tools.i("");
+////        }
 
         //  9 8 0 1
         //  98 01

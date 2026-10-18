@@ -3,7 +3,7 @@ package euler;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
-import utils.tools;
+import utils.Tools;
 
 
 public class a23nonAbundantSums {
@@ -12,7 +12,7 @@ public class a23nonAbundantSums {
     public static Set<Integer> abundantNumbers(int x) {
         Set<Integer> listOfAbundantNumbers = new LinkedHashSet<>();
         for (int i = 1; i < x; i++) {
-            int k = (int) tools.sumOfDivisors(i);
+            int k = (int) Tools.sumOfDivisors(i);
             //utils.tools.d("The sum of the divisors of " + i + ": " + k);
             if (k > i) {
                 listOfAbundantNumbers.add(i);
@@ -82,7 +82,7 @@ public class a23nonAbundantSums {
     }*/
 
     public static void main(String[] args) {
-        tools.d("Sum of all the numbers which cannot be written as the sum of two abundant numbers: " + nonAbundantNumbers(28123));
+        Tools.d("Sum of all the numbers which cannot be written as the sum of two abundant numbers: " + nonAbundantNumbers(28123));
         //utils.tools.d("Sum of all the numbers which cannot be written as the sum of two abundant numbers: " + sumOfNonAbundant(28123));
 
     }

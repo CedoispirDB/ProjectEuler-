@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.LinkedList;
 import java.util.List;
-import utils.tools;
+import utils.Tools;
 
 
 public class a26reciprocalCycles {
@@ -65,14 +65,14 @@ public class a26reciprocalCycles {
                     if (newDecimal.length() - lastOccurrence > check) {
                         check = newDecimal.length() - lastOccurrence;
                         endNum = d;
-                        tools.d("Larger size detected is " + check + " from 1/" + endNum);
+                        Tools.d("Larger size detected is " + check + " from 1/" + endNum);
                     }
                 }
             }
         }
 
 
-        tools.d("Number of decimals digits with longest period: " + endNum + " with " + check + "numbers ");
+        Tools.d("Number of decimals digits with longest period: " + endNum + " with " + check + "numbers ");
     }
 
     public static void main(String[] args) {

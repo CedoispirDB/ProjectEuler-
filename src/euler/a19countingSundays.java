@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -66,6 +66,6 @@ public class a19countingSundays {
 
     public static void main(String[] args) {
 
-        tools.d("The number of sundays is: " + numberOfSundays(2000,12,30));
+        Tools.d("The number of sundays is: " + numberOfSundays(2000,12,30));
     }
 }

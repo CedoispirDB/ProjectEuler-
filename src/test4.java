@@ -1,5 +1,5 @@
 
-import  utils.tools;
+import  utils.Tools;
 public class test4 {
 
     private static double primeCount = 0;
@@ -31,8 +31,8 @@ public class test4 {
                 diagonal = numbers;
                 diaNum++;
                 diagonalCount++;
-                tools.d("diagonals: " + diagonal);
-                if (tools.isItPrime(diagonal)) {
+                Tools.d("diagonals: " + diagonal);
+                if (Tools.isItPrime(diagonal)) {
                     primeCount++;
                 }
             }
@@ -72,9 +72,9 @@ public class test4 {
 
     public static void main(String[] args) {
         getPercentage(7);
-        tools.d("skip");
+        Tools.d("skip");
         getPercentage(9);
-        tools.d("skip");
+        Tools.d("skip");
         getPercentage(11);
 
 

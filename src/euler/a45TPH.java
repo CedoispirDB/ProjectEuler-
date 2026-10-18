@@ -2,7 +2,7 @@ package euler;
 
 import java.util.LinkedList;
 import java.util.List;
-import utils.tools;
+import utils.Tools;
 
 
 public class a45TPH {
@@ -30,7 +30,7 @@ public class a45TPH {
             if (pNum.contains(t) && hNum.contains(t) && t >= 40755) {
                 count++;
                 if (count == choose) {
-                    tools.d("Result: " + t);
+                    Tools.d("Result: " + t);
                     System.exit(0);
                 }
             }

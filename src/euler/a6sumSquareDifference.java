@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 
 public class a6sumSquareDifference {
@@ -13,7 +13,7 @@ public class a6sumSquareDifference {
         }
         long squareSumOfNumber = (long) Math.pow(sumOfNumbers,2);
         long difference = squareSumOfNumber - sumOfSquares;
-        tools.d(difference);
+        Tools.d(difference);
 
     }
 

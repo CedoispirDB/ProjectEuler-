@@ -1,4 +1,4 @@
-import utils.tools;
+import utils.Tools;
 
 public class eulersTotientFunction {
 
@@ -35,7 +35,7 @@ public class eulersTotientFunction {
 //        for (double i = 2; i <= 50; i++) {
 //            tools.d("For " + (int) i + ": " + (i  / (double)totientFunction((int)i)));
 //        }
-        tools.d("Start");
-        tools.d(totientFunction(999998));
+        Tools.d("Start");
+        Tools.d(totientFunction(999998));
     }
 }

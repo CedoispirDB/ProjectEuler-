@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 
 public class a5smallestMultiple {
@@ -11,7 +11,7 @@ public class a5smallestMultiple {
             maxPossibleResult = maxPossibleResult*i;
         }
 
-        tools.d("Max Possible Result: "+ maxPossibleResult);
+        Tools.d("Max Possible Result: "+ maxPossibleResult);
 
         // Loop from minGuess to maxPossibleResult
         long minGuess = 10*9;
@@ -36,7 +36,7 @@ public class a5smallestMultiple {
                 }
             }
         }
-        tools.d("The smallest multiple is: " + (minResult >0 ? minResult : maxPossibleResult) );
+        Tools.d("The smallest multiple is: " + (minResult >0 ? minResult : maxPossibleResult) );
     }
 
 

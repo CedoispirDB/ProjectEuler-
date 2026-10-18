@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 public class a15latticePaths {
 
@@ -15,7 +15,7 @@ public class a15latticePaths {
                 counter++;
                 ++totalFound;
                 if (totalFound % 20000000 == 0) {
-                    tools.d(gridRows + "," + gridColumns + " : Path Completed (" + totalFound + " so far)!");
+                    Tools.d(gridRows + "," + gridColumns + " : Path Completed (" + totalFound + " so far)!");
                 }
             } else {
                 counter = counter + getNextMove(gridRows, gridColumns, r, (c + 1));
@@ -28,7 +28,7 @@ public class a15latticePaths {
                 counter++;
                 ++totalFound;
                 if (totalFound % 20000000 ==0) {
-                    tools.d(gridRows + "," + gridColumns + " : Path Completed ("+ totalFound +" so far)!");
+                    Tools.d(gridRows + "," + gridColumns + " : Path Completed ("+ totalFound +" so far)!");
                 }
             } else {
                 counter = counter + getNextMove(gridRows, gridColumns, (r + 1), c);
@@ -39,7 +39,7 @@ public class a15latticePaths {
     }
 
     public static void main(String[] args) {
-        tools.d("Total " + getNextMove(20, 20, 0, 0));
+        Tools.d("Total " + getNextMove(20, 20, 0, 0));
 
     }
 }

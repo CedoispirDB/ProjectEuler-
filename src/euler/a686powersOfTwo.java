@@ -2,7 +2,7 @@ package euler;
 
 import java.math.BigInteger;
 
-import utils.tools;
+import utils.Tools;
 
 public class a686powersOfTwo {
 
@@ -43,7 +43,7 @@ public class a686powersOfTwo {
                 if (oneTwoThree.multiply(tenPow).compareTo(result) < 0 && (oneTwoThree.add(BigInteger.ONE).multiply(tenPow).subtract(BigInteger.ONE)).compareTo(result) > 0) {
                     count++;
 //                    tools.d(count + " || " + x + ", " + result .divide(BigInteger.valueOf(4)));
-                    tools.d(count + " || " + x);
+                    Tools.d(count + " || " + x);
 
                 } else if (sixOne.multiply(tenPow).compareTo(result) < 0 && (sixOne.add(BigInteger.ONE).multiply(tenPow).subtract(BigInteger.ONE)).compareTo(result) > 0) {
                     k = 2;
@@ -56,7 +56,7 @@ public class a686powersOfTwo {
     }
 
     public static void main(String[] args) {
-        tools.d(twoToThePower(678910));
+        Tools.d(twoToThePower(678910));
     }
 
 }

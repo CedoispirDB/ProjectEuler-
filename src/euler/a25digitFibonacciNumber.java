@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 public class a25digitFibonacciNumber {
 
@@ -68,7 +68,7 @@ public class a25digitFibonacciNumber {
 
 
             //utils.tools.d("\n" + "Sum length: " + String.valueOf(strSum).length() + "\n" + "sum:" + strSum + "\n");
-            tools.d(count + "-) " + strSum + "\n");
+            Tools.d(count + "-) " + strSum + "\n");
             //strSum.length() <= 1000
             count++;
         } while (strSum.length() < 1000);
@@ -77,7 +77,7 @@ public class a25digitFibonacciNumber {
     }
 
     public static void main(String[] args) {
-        tools.d(fibonacciSequence());
+        Tools.d(fibonacciSequence());
 
     }
 }

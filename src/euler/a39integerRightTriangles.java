@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -62,6 +62,6 @@ public class a39integerRightTriangles {
     }
 
     public static void main(String[] args) {
-        tools.d(totalNP());
+        Tools.d(totalNP());
     }
 }

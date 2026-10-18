@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 public class a30digitFifthPowers {
     private static long sumOfPowers(){
@@ -8,14 +8,14 @@ public class a30digitFifthPowers {
         long totalSum = 0;
         for (int i = 10; i <= 1000000; i++){
             sum = 0;
-            tools.d(  "i: " + i);
+            Tools.d(  "i: " + i);
 
             numStr = String.valueOf(i);
 
             for (int x = 0; x < numStr.length(); x++){
-                sum += tools.exponent(Integer.parseInt(String.valueOf(numStr.charAt(x))),5);
+                sum += Tools.exponent(Integer.parseInt(String.valueOf(numStr.charAt(x))),5);
             }
-            tools.d("sum after : " + sum + "\n");
+            Tools.d("sum after : " + sum + "\n");
             if (sum == i){
                 totalSum += i;
             }
@@ -24,6 +24,6 @@ public class a30digitFifthPowers {
     }
 
     public static void main(String[] args) {
-        tools.d(sumOfPowers());
+        Tools.d(sumOfPowers());
     }
 }

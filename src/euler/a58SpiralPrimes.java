@@ -1,7 +1,7 @@
 package euler;
 
 
-import utils.tools;
+import utils.Tools;
 
 public class a58SpiralPrimes {
 
@@ -42,25 +42,25 @@ public class a58SpiralPrimes {
                 cnt = 0;
             }
 
-            if (tools.isItPrime(diagonal)) {
+            if (Tools.isItPrime(diagonal)) {
                 primeDiagonals++;
-                tools.d("Prime: " + diagonal);
+                Tools.d("Prime: " + diagonal);
             }
 
             // division is wrong
 
 
-            tools.d("Number of primes: " + primeDiagonals);
-            tools.d("Total num diagonals: " + totalDiagonals);
-            tools.d("per: " + per);
+            Tools.d("Number of primes: " + primeDiagonals);
+            Tools.d("Total num diagonals: " + totalDiagonals);
+            Tools.d("per: " + per);
 
 //            tools.d("length so far: " + (length + 3));
-            tools.d("for " + (length + 3) + " per: " + per);
+            Tools.d("for " + (length + 3) + " per: " + per);
             if (per < 10 && per != 0) {
-                tools.d("For length: " + (length + 3) + " percentage: " + per);
+                Tools.d("For length: " + (length + 3) + " percentage: " + per);
                 break;
             }
-            tools.i("");
+            Tools.i("");
         }
 
 
@@ -89,7 +89,7 @@ public class a58SpiralPrimes {
 
             diaNum++;
             diagonalCount++;
-            if (tools.isItPrime(numbers)) {
+            if (Tools.isItPrime(numbers)) {
                 System.out.println(numbers);
                 primeCount++;
             }
@@ -99,8 +99,8 @@ public class a58SpiralPrimes {
             numbers += mult;
         } while (rotate <= limit);
 
-        tools.d("primes: " + primeCount);
-        tools.d("diagonals: " + diagonalCount);
+        Tools.d("primes: " + primeCount);
+        Tools.d("diagonals: " + diagonalCount);
 
         percentage = primeCount / diagonalCount * 100 + 0.5;
 
@@ -139,17 +139,17 @@ public class a58SpiralPrimes {
 
         while( ((double)noOfPrimes)/(2*sl+1) > 0.10){
             sl += 2;
-            tools.d("Length: " + sl);
+            Tools.d("Length: " + sl);
             for(int i = 0; i < 3; i++){
                 c += sl;
-                if(tools.isItPrime(c)) noOfPrimes++;
+                if(Tools.isItPrime(c)) noOfPrimes++;
             }
             c+= sl;
         }
 
-        tools.d("Num of diagonals: " + (2 * sl + 1));
-        tools.d("Num of primes: " + + noOfPrimes);
-        tools.d("Length: " + sl);
+        Tools.d("Num of diagonals: " + (2 * sl + 1));
+        Tools.d("Num of primes: " + + noOfPrimes);
+        Tools.d("Length: " + sl);
     }
 }
 

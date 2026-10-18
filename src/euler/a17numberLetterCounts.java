@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -69,9 +69,9 @@ public class a17numberLetterCounts {
                 text = text + n.get(j);
             }
 
-            tools.d(i + " = " + text + " (" + text.replace(" ", "").length() + ")");
+            Tools.d(i + " = " + text + " (" + text.replace(" ", "").length() + ")");
             lettersSum += text.replace(" ", "").length();
-            tools.d(lettersSum);
+            Tools.d(lettersSum);
         }
 
 

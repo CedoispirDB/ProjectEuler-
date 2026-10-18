@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 
 public class a43substringDivisibility {
@@ -88,19 +88,19 @@ public class a43substringDivisibility {
         long sum = 0;
         for (long i = 1000000000; i <= 9000000000L; i++) {
             if (i % 1000000000L == 0) {
-                tools.d("We are at: " + i + " || with sum:" + sum);
+                Tools.d("We are at: " + i + " || with sum:" + sum);
 
             }
             if (checkIfPandigital(String.valueOf(i)) && substringDiv(i)) {
                 sum += i;
-                tools.d("i: " + i + " || sum: " + sum);
+                Tools.d("i: " + i + " || sum: " + sum);
 
             }
         }
         return sum;
     }
     public static void main(String[] args) {
-        tools.d(sumOfNum());
+        Tools.d(sumOfNum());
 
     }
 

@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 import java.math.BigInteger;
 
@@ -49,7 +49,7 @@ public class a55LychrelNumbers {
         int ans = 0;
         for (int i = 0; i < 10000; i++) {
             if (checkifIsLychrel(i)) {
-                tools.d("lychrel: " + i);
+                Tools.d("lychrel: " + i);
                 ans++;
 
             }
@@ -58,6 +58,6 @@ public class a55LychrelNumbers {
     }
 
     public static void main(String[] args) {
-        tools.d(countLychrelNumbers());
+        Tools.d(countLychrelNumbers());
     }
 }

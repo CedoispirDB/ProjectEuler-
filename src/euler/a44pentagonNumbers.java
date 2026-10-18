@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -25,8 +25,8 @@ public class a44pentagonNumbers {
                 if (pentaNumbers().contains(sum)) {
                     dif = i - j;
                     if (pentaNumbers().contains(dif) && dif > 0){
-                        tools.d(i + " + " + j + " = " + sum);
-                        tools.d(i + " - " + j + " = " + dif);
+                        Tools.d(i + " + " + j + " = " + sum);
+                        Tools.d(i + " - " + j + " = " + dif);
                         result = j - i;
                         return Math.abs(result);
                     }
@@ -38,6 +38,6 @@ public class a44pentagonNumbers {
     }
 
     public static void main(String[] args) {
-        tools.d(findD());
+        Tools.d(findD());
     }
 }

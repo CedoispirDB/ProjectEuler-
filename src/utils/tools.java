@@ -3,19 +3,20 @@ package utils;
 import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.text.DecimalFormat;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
-public class tools {
+public class Tools {
 
+    // retusn -1 if non-numeric value
+    public static int charToDigit(char c) {
+        return Character.getNumericValue(c);
+    }
 
     //Print a list of Integers
     public static void l(List<Long> k) {
         k.forEach(System.out::println);
     }
-
 
     //Formatting a number
     public static void format(double in) {
@@ -53,7 +54,6 @@ public class tools {
             }
         }
 
-
         return sumOfDivisors == 1;
     }
 
@@ -79,7 +79,6 @@ public class tools {
         l(divisors);
 
     }
-
 
     //Find the factorial of a number
     public static BigInteger factorialOfNumberB(long n) {
@@ -119,7 +118,6 @@ public class tools {
 
     }
 
-
     //Find the sum of all the divisors of a number
     public static long sumOfDivisors(long x) {
         long sumOfDivisors = 0;
@@ -146,14 +144,7 @@ public class tools {
         return xB.pow(2);
     }
 
-
     public static void main(String[] args) {
         d(isItPrime(999997));
     }
 }
-
-
-
-
-
-

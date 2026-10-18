@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 public class a3largestPrimeFactor {
     public static double factors(long x) {
@@ -9,7 +9,7 @@ public class a3largestPrimeFactor {
 
         for (long v = 1; v <= x; v++) {
             if (x % v == 0) {
-                if (tools.isItPrime(v)) {
+                if (Tools.isItPrime(v)) {
                    i = v;
                     // utils.tools.d(v);
                 }
@@ -27,7 +27,7 @@ public class a3largestPrimeFactor {
 
 
     public static void main(String[] args) {
-        tools.d("The prime factor is: " + factors(600851475143L));
+        Tools.d("The prime factor is: " + factors(600851475143L));
 
         //45 sec
         // -1104303640

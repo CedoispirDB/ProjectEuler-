@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 public class a14longestCollatzSequence {
     //Count how many numbers there is in the chain
@@ -40,7 +40,7 @@ public class a14longestCollatzSequence {
     }
 
     public static void main(String[] args) {
-        tools.d("The number with longest chain is: " + longestChain());
+        Tools.d("The number with longest chain is: " + longestChain());
         //utils.tools.d(quantityOfNumbers(2));
         //"The greatest chain is from the number " + greatestChain + " with " + n + " number in the sequence.";
     }

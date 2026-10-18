@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 public class a40ChampernownesConstant {
 
@@ -21,6 +21,6 @@ public class a40ChampernownesConstant {
     }
 
     public static void main(String[] args) {
-        tools.d(multiplications(decimals()));
+        Tools.d(multiplications(decimals()));
     }
 }

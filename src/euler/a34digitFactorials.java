@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 public class a34digitFactorials {
     private static int sum() {
@@ -14,7 +14,7 @@ public class a34digitFactorials {
             digitStr = String.valueOf(digit);
             for (int i = 0; i < digitStr.length(); i++) {
                 x = Integer.parseInt(String.valueOf(digitStr.charAt(i)));
-                numFac = tools.factorialOfNumber(x);
+                numFac = Tools.factorialOfNumber(x);
                 sum += numFac;
                 //utils.tools.d("The sum for " + digit + " is " + sum + " (" + numFac + ")");
                 if (sum == digit){
@@ -26,6 +26,6 @@ public class a34digitFactorials {
     }
 
     public static void main(String[] args) {
-        tools.d("Total sum is: " + sum());
+        Tools.d("Total sum is: " + sum());
     }
 }

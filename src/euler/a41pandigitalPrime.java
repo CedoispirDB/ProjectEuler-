@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 public class a41pandigitalPrime {
     private static boolean findPans(String x) {
@@ -30,10 +30,10 @@ public class a41pandigitalPrime {
     private static int findPanPrime() {
         int greatestPrime= 0;
         for (int i = 0; i <= 10000000; i++) {
-            if (tools.isItPrime(i)){
+            if (Tools.isItPrime(i)){
                 if (findPans(String.valueOf(i))){
                     if (i > greatestPrime){
-                        tools.d(i);
+                        Tools.d(i);
                         greatestPrime = i;
                     }
                 }
@@ -45,6 +45,6 @@ public class a41pandigitalPrime {
 
     public static void main(String[] args) {
         // 4 hours tho
-        tools.d(findPanPrime());
+        Tools.d(findPanPrime());
     }
 }

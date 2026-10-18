@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 import java.util.*;
 
@@ -58,6 +58,6 @@ public class a52permutedMultiples {
     }
 
     public static void main(String[] args) {
-        tools.d(integerSameDigits());
+        Tools.d(integerSameDigits());
     }
 }

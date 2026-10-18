@@ -2,7 +2,7 @@ package euler;
 
 import java.math.BigInteger;
 
-import utils.tools;
+import utils.Tools;
 
 public class a97largeNonMersennePrime {
 
@@ -15,6 +15,6 @@ public class a97largeNonMersennePrime {
 
 
     public static void main(String[] args) {
-        tools.d(bigPrimeLastDigits());
+        Tools.d(bigPrimeLastDigits());
     }
 }

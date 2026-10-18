@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 public class a92SquareDigitChains {
 
@@ -30,6 +30,6 @@ public class a92SquareDigitChains {
             }
         }
 
-        tools.d("answer: " + count);
+        Tools.d("answer: " + count);
     }
 }

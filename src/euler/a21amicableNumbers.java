@@ -1,7 +1,7 @@
 package euler;
 
 import java.util.*;
-import utils.tools;
+import utils.Tools;
 
 
 public class a21amicableNumbers {
@@ -13,9 +13,9 @@ public class a21amicableNumbers {
         int db;
 
         for (int a = 1; a <= k; a++) {
-            da = (int) tools.sumOfDivisors(a);
+            da = (int) Tools.sumOfDivisors(a);
             b = da;
-            db = (int) tools.sumOfDivisors(b);
+            db = (int) Tools.sumOfDivisors(b);
             // utils.tools.d(da);
             //utils.tools.d(db);
             if(db == a && a!= b) {
@@ -38,7 +38,7 @@ public class a21amicableNumbers {
 
 
     public static void main(String[] args) {
-        tools.d(sumOfAmicableNumbers(10000));
+        Tools.d(sumOfAmicableNumbers(10000));
 
     }
 

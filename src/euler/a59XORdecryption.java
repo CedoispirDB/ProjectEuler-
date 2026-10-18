@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 import java.util.Arrays;
 import java.util.List;
 
@@ -39,7 +39,7 @@ public class a59XORdecryption {
                     String text = decrypt(cipher, key);
 
                     if (text.contains(" the ")) {
-                        tools.d("key: "+ key + " : " + text + "\n - ASCII SUM: " + sumASCII(text));
+                        Tools.d("key: "+ key + " : " + text + "\n - ASCII SUM: " + sumASCII(text));
                     }
                 }
             }

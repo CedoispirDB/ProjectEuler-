@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 public class a2EvenFibonacciNumbers {
     public static int fibonacciSequence() {
@@ -23,7 +23,7 @@ public class a2EvenFibonacciNumbers {
     }
 
     public static void main(String[] args) {
-        tools.i("The sum is "+ fibonacciSequence());
+        Tools.i("The sum is "+ fibonacciSequence());
     }
 
 }

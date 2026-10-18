@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 import static euler.a32pandigitalProducts.checkIfPandigital;
 
@@ -34,6 +34,6 @@ public class a38pandigitalMultiples {
     }
 
     public static void main(String[] args) {
-        tools.d(product());
+        Tools.d(product());
     }
 }

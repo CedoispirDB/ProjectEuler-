@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 public class a7lastPrimeNumber {
     public static void findTheNthPrime(int n) {
@@ -7,10 +7,10 @@ public class a7lastPrimeNumber {
         int i = 0;
         while (true) {
 
-            if (tools.isItPrime(i)) {
+            if (Tools.isItPrime(i)) {
                 count += 1;
                 if (count == n) {
-                    tools.d("The " + n +i);
+                    Tools.d("The " + n +i);
                     break;
                 }
 

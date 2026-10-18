@@ -1,7 +1,7 @@
 package euler;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import utils.tools;
+import utils.Tools;
 
 public class a29distinctPowers {
     public static int distinctPowers(int limit) {
@@ -18,6 +18,6 @@ public class a29distinctPowers {
     }
 
     public static void main(String[] args) {
-        tools.d(distinctPowers(100));
+        Tools.d(distinctPowers(100));
     }
 }

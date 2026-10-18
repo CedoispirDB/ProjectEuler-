@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import utils.tools;
+import utils.Tools;
 
 public class test3 {
 

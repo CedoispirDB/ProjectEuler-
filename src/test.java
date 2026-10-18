@@ -1,5 +1,5 @@
 import utils.mathTools;
-import utils.tools;
+import utils.Tools;
 
 import java.io.BufferedReader;
 import java.util.LinkedList;
@@ -59,11 +59,11 @@ public class test {
             for (double n : primes) {
                 if (n < d) {
                     if ((d * n0) > (n * d0) && (d * checkN) < (n * checkD)) {
-                        tools.d("Div: " + n + "/" + d);
-                        tools.d("(d * 3) = " + (d * n0) + " & " + "(n * 7) = " + (n * d0));
-                        tools.d("(n * " + checkD + ") = " + (n * checkD) + " & " + "(d * " + checkN + ") = " + (d * checkN));
-                        tools.d((d * n0) + " > " + (n * d0) + " & " + (d * checkN) + " < " + (n * checkD));
-                        tools.i();
+                        Tools.d("Div: " + n + "/" + d);
+                        Tools.d("(d * 3) = " + (d * n0) + " & " + "(n * 7) = " + (n * d0));
+                        Tools.d("(n * " + checkD + ") = " + (n * checkD) + " & " + "(d * " + checkN + ") = " + (d * checkN));
+                        Tools.d((d * n0) + " > " + (n * d0) + " & " + (d * checkN) + " < " + (n * checkD));
+                        Tools.i();
                         // n/d < 3/7
                         ans = n;
                         ans2 = d;
@@ -75,11 +75,11 @@ public class test {
             }
         }
 
-        tools.i();
-        tools.d("First n: " + ans);
-        tools.d("First d: " + ans2);
-        tools.d("First ans: " + ans);
-        tools.i();
+        Tools.i();
+        Tools.d("First n: " + ans);
+        Tools.d("First d: " + ans2);
+        Tools.d("First ans: " + ans);
+        Tools.i();
 
         for (double d : primes) {
 //            tools.d("d: " + d);
@@ -104,10 +104,10 @@ public class test {
             }
 
         }
-        tools.i();
-        tools.d("Second n: " + ans);
-        tools.d("Second d: " + ans2);
-        tools.d("Second ans: " + ans);
+        Tools.i();
+        Tools.d("Second n: " + ans);
+        Tools.d("Second d: " + ans2);
+        Tools.d("Second ans: " + ans);
     }
 
 }

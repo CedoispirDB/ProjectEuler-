@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 import utils.mathTools;
 public class a47distinctPrimesFactors {
 
@@ -17,7 +17,7 @@ public class a47distinctPrimesFactors {
         do {
             do {
                 n++;
-                if (!tools.isItPrime(n)) {
+                if (!Tools.isItPrime(n)) {
                     if (mathTools.primeFactors(n) >= numberOfFactors) {
                         consecutive++;
                         if (firstN == 0) {
@@ -42,10 +42,10 @@ public class a47distinctPrimesFactors {
             } while (consecutive < numberOfFactors);
 
             if (firstN == secondN - 1 && secondN == thirdN - 1 && thirdN == fourthN - 1){
-                tools.d(firstN);
-                tools.d(secondN);
-                tools.d(thirdN);
-                tools.d(fourthN);
+                Tools.d(firstN);
+                Tools.d(secondN);
+                Tools.d(thirdN);
+                Tools.d(fourthN);
                 break;
             }
 

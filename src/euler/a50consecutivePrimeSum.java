@@ -2,7 +2,7 @@ package euler;
 
 import java.util.ArrayList;
 import java.util.List;
-import utils.tools;
+import utils.Tools;
 
 public class a50consecutivePrimeSum {
 
@@ -16,7 +16,7 @@ public class a50consecutivePrimeSum {
         int turns = 0;
 
         for (int i = 2; i < below; i++) {
-            if (tools.isItPrime(i)) {
+            if (Tools.isItPrime(i)) {
                 primeNumbers.add(i);
 
             }
@@ -33,7 +33,7 @@ public class a50consecutivePrimeSum {
                     if (primeNumbers.contains(sum)) {
                         primeResult = sum;
                         check = count;
-                        tools.d("Sum of primes: " + sum + " with " + count + " numbers");
+                        Tools.d("Sum of primes: " + sum + " with " + count + " numbers");
                     }
                 } else if (sum > below) {
                     break;
@@ -46,7 +46,7 @@ public class a50consecutivePrimeSum {
     }
 
     public static void main(String[] args) {
-        tools.d("Prime: " + primeSum(1000000));
+        Tools.d("Prime: " + primeSum(1000000));
 
     }
 

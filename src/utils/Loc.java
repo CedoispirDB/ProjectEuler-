@@ -1,6 +1,9 @@
 package utils;
 
+import java.io.IOException;
 import java.nio.file.*;
+import java.util.Collections;
+import java.util.List;
 
 public class Loc {
 
@@ -17,4 +20,12 @@ public class Loc {
         return Path.of("data", file_name);
     }
 
+    public static List<String> getFileLines(String file_name) {
+        try {
+            return Files.readAllLines(getDataPath(file_name));
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+            return Collections.emptyList();
+        }
+    }
 }

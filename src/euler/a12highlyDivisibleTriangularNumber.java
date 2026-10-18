@@ -1,7 +1,7 @@
 package euler;
 
 import utils.Crono;
-import utils.tools;
+import utils.Tools;
 
 public class a12highlyDivisibleTriangularNumber {
 
@@ -23,7 +23,7 @@ public class a12highlyDivisibleTriangularNumber {
 
             // Print duration every minute
             if (c.getLastLapDuration() > 60000 ) {
-                tools.d("Still working, approximate time elapsed : " + c.elapsedMins() + " mins");
+                Tools.d("Still working, approximate time elapsed : " + c.elapsedMins() + " mins");
                 c.lap();
             }
 
@@ -40,7 +40,7 @@ public class a12highlyDivisibleTriangularNumber {
     }
 
     public static void main(String[] args) {
-        tools.d("Number with X divisors: " + findTriangleNumbers());
+        Tools.d("Number with X divisors: " + findTriangleNumbers());
     }
 
 }

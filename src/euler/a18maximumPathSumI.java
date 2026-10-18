@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 import java.util.*;
 
 public class a18maximumPathSumI {
@@ -38,7 +38,7 @@ public class a18maximumPathSumI {
                 if (!hasBeen.contains("|")) {
                     if (isLargeSum(numbers, hasBeen.substring(0, hasBeen.length() - 1))) {
                         allPaths.add(hasBeen.substring(0, hasBeen.length() - 1));
-                        tools.d("Possible large paths in list: " + allPaths.size() + " largest Sum=" + maxSum);
+                        Tools.d("Possible large paths in list: " + allPaths.size() + " largest Sum=" + maxSum);
                     }
 
                 }
@@ -186,14 +186,14 @@ public class a18maximumPathSumI {
                 sum = sum + triangle.get(Integer.parseInt(p) - 1);
             }
 
-            tools.d("Path: " + pa + " Sum: " + sum);
+            Tools.d("Path: " + pa + " Sum: " + sum);
             if (sum > maxSum) {
                 maxSum = sum;
             }
         }
 
 
-        tools.d(maxSum);
+        Tools.d(maxSum);
 
     }
 }

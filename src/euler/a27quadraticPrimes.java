@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class a27quadraticPrimes {
         List<Integer> bVals = new LinkedList<>();
         for (int k = 1;
              k <= 1000; k++) {
-            if (tools.isItPrime(k)) {
+            if (Tools.isItPrime(k)) {
                 bVals.add(k);
                 bVals.add(k * -1);
             }
@@ -28,7 +28,7 @@ public class a27quadraticPrimes {
                 int consecutivePrimes = 0;
                 for (int n = 0; n < 1000; n++) {
                     //tools.d(" Checking Primes for n^2 + " + a + "*n + "+ b);
-                    if (tools.isItPrime((tools.exponent(n, 2)) + (a * n) + b)) {
+                    if (Tools.isItPrime((Tools.exponent(n, 2)) + (a * n) + b)) {
                         if (consecutivePrimes > maxConsecutivePrimes) {
                             //tools.d(consecutivePrimes + " Consecutive Primes for n^2 + " + a + "*n + " + b);
                             maxConsecutivePrimes = consecutivePrimes;
@@ -52,7 +52,7 @@ public class a27quadraticPrimes {
                 int consecutivePrimes = 0;
                 for (int n = 0; n < 1000; n++) {
                     //tools.d(" Checking Primes for n^2 + " + a + "*n + "+ b);
-                    if  (tools.isItPrime((tools.exponent(n, 2)) - (a * n) + b)) {
+                    if  (Tools.isItPrime((Tools.exponent(n, 2)) - (a * n) + b)) {
                         if (consecutivePrimes > maxConsecutivePrimes) {
                             //tools.d(consecutivePrimes + " Consecutive Primes for n^2 - " + a + "*n + " + b);
                             maxConsecutivePrimes = consecutivePrimes;
@@ -72,7 +72,7 @@ public class a27quadraticPrimes {
     }
 
     public static void main(String[] args) {
-        tools.d("Product: " + productOfCoefficients());
+        Tools.d("Product: " + productOfCoefficients());
     }
 
 }

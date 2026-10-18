@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 import utils.mathTools;
 
 import java.util.LinkedList;
@@ -113,11 +113,11 @@ public class a49primePermutations {
                     diff2 = n2 - n1;
                     if (diff1 == diff2) {
                         if (n0 != n1 && n1 != n2) {
-                            if (tools.isItPrime(n0) && tools.isItPrime(n1) && tools.isItPrime(n2)) {
+                            if (Tools.isItPrime(n0) && Tools.isItPrime(n1) && Tools.isItPrime(n2)) {
                                 if (checkIfIsPermutations(n0, n1, n2)) {
-                                    tools.d("n0: " + n0);
-                                    tools.d("n1: " + n1);
-                                    tools.d("n2: " + n2);
+                                    Tools.d("n0: " + n0);
+                                    Tools.d("n1: " + n1);
+                                    Tools.d("n2: " + n2);
                                     ans.append(n0);
                                     ans.append(n1);
                                     ans.append(n2);
@@ -142,6 +142,6 @@ public class a49primePermutations {
 
 
     public static void main(String[] args) {
-        tools.d("Answer: " + newSequence(1488, 10000));
+        Tools.d("Answer: " + newSequence(1488, 10000));
     }
 }

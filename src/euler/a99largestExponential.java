@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -24,7 +24,7 @@ public class a99largestExponential {
             }
         }
 
-        tools.d(n.indexOf(a));
+        Tools.d(n.indexOf(a));
         line = ((n.indexOf(a)) / 2) + 1;
 
 

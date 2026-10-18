@@ -1,4 +1,4 @@
-import utils.tools;
+import utils.Tools;
 
 public class greatestCommonDivisor {
     private static int findGCD(int a, int b) {
@@ -19,7 +19,7 @@ public class greatestCommonDivisor {
     }
 
     public static void main(String[] args) {
-        tools.d(findGCD(2,10));
+        Tools.d(findGCD(2,10));
 
     }
 }

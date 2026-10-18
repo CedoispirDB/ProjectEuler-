@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 public class a684inverseDigitSum {
 
@@ -45,12 +45,12 @@ public class a684inverseDigitSum {
             sum = a1 + a2;
             a1 = a2;
             a2 = sum;
-            tools.d("We are at: " + i + " || sum: " + sum);
+            Tools.d("We are at: " + i + " || sum: " + sum);
             sumF += findSumOfSmallNum(sum);
 
         }
 
-        tools.d("sum: " + sumF);
+        Tools.d("sum: " + sumF);
         return sumF % 1000000007;
 
     }
@@ -58,7 +58,7 @@ public class a684inverseDigitSum {
 
     public static void main(String[] args) {
 
-        tools.d(finalSum());
+        Tools.d(finalSum());
 //        tools.d(findSumOfSmallNum(89));
     }
 

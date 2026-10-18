@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 import utils.mathTools;
 import java.math.BigInteger;
 
@@ -66,7 +66,7 @@ public class a33digitCancellingFractions {
 
 
     public static void main(String[] args) {
-        tools.d(productOfDenominators());
+        Tools.d(productOfDenominators());
 //        tools.d(removeLikeTherms(48,98));
     }
 }

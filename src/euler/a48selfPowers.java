@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 import java.math.BigInteger;
 
@@ -15,6 +15,6 @@ public class a48selfPowers {
     }
 
     public static void main(String[] args) {
-        tools.d(powers());
+        Tools.d(powers());
     }
 }

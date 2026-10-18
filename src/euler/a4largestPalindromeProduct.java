@@ -1,7 +1,7 @@
 package euler;
 
 import java.util.*;
-import utils.tools;
+import utils.Tools;
 
 public class a4largestPalindromeProduct {
     public static void listOfNumbers(int n,int k) {
@@ -42,7 +42,7 @@ public class a4largestPalindromeProduct {
             }
 
         }
-        tools.d(l);
+        Tools.d(l);
 
 
     }

@@ -2,7 +2,7 @@ package euler;
 
 import java.util.LinkedList;
 import java.util.List;
-import utils.tools;
+import utils.Tools;
 
 
 public class a35circularPrimes {
@@ -32,10 +32,10 @@ public class a35circularPrimes {
         boolean circularPrime;
         for (int i = 2; i <= limit; i++) {
             circularPrime = false;
-            if (tools.isItPrime(i)) {
+            if (Tools.isItPrime(i)) {
                 x = rotateNum(String.valueOf(i));
                 for (String p : x) {
-                    if (tools.isItPrime(Integer.parseInt(p))) {
+                    if (Tools.isItPrime(Integer.parseInt(p))) {
                         circularPrime = true;
                     } else {
                         circularPrime = false;
@@ -60,7 +60,7 @@ public class a35circularPrimes {
 
 
     public static void main(String[] args) {
-     tools.d(countCircularPrimes(1000000));
+     Tools.d(countCircularPrimes(1000000));
 
 
     }

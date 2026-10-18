@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 
 public class a31coinSums {
@@ -44,6 +44,6 @@ public class a31coinSums {
     }
 
     public static void main(String[] args) {
-        tools.d(comNum());
+        Tools.d(comNum());
     }
 }

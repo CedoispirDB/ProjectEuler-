@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 
 import java.math.BigInteger;
 
@@ -33,6 +33,6 @@ public class a56powerfulDigitSum {
 
 
     public static void main(String[] args) {
-        tools.d(maxDigSum());
+        Tools.d(maxDigSum());
     }
 }

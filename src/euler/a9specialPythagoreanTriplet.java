@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 
 public class a9specialPythagoreanTriplet {
@@ -38,9 +38,9 @@ public class a9specialPythagoreanTriplet {
 
                         potato = true;
 
-                        tools.d("a: " + a);
-                        tools.d("b: " + b);
-                        tools.d("c: " + c);
+                        Tools.d("a: " + a);
+                        Tools.d("b: " + b);
+                        Tools.d("c: " + c);
                         break;
 
                     }
@@ -54,7 +54,7 @@ public class a9specialPythagoreanTriplet {
         //Get the product of a, b and c
 
         int product = a * b * c;
-        tools.d(product);
+        Tools.d(product);
     }
 
     public static void main(String[] args) {

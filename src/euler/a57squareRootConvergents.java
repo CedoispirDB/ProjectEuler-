@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 import utils.mathTools;
 
 import java.util.LinkedList;
@@ -54,7 +54,7 @@ public class a57squareRootConvergents {
 //            List<Integer> k = expansion(n, d, i, i);
 
             if (i == 0) {
-                tools.d((i + 2) + ": " + "1 + " + n + "/" + d + " " + sumFractions(1, 1, n, d));
+                Tools.d((i + 2) + ": " + "1 + " + n + "/" + d + " " + sumFractions(1, 1, n, d));
             }
 
             List<Integer> sumFrac = sumFractions(2, 1, n, d);
@@ -65,15 +65,15 @@ public class a57squareRootConvergents {
             n = d;
             d = n2;
 
-            tools.d((i + 2) + ": " + "1 + " + n + "/" + d + " " + sumFractions(1, 1, n, d));
+            Tools.d((i + 2) + ": " + "1 + " + n + "/" + d + " " + sumFractions(1, 1, n, d));
 
             String x = String.valueOf(sumFractions(1, 1, n, d).get(0));
             String y = String.valueOf(sumFractions(1, 1, n, d).get(1));
 
             if (x.length() > y.length() && x.length() != 2 && y.length() != 1) {
-                tools.i("");
-                tools.d("n: "+ sumFractions(1, 1, n, d).get(0));
-                tools.d("d: " + sumFractions(1, 1, n, d).get(1) + "\n");
+                Tools.i("");
+                Tools.d("n: "+ sumFractions(1, 1, n, d).get(0));
+                Tools.d("d: " + sumFractions(1, 1, n, d).get(1) + "\n");
 
 
                 count++;
@@ -95,7 +95,7 @@ public class a57squareRootConvergents {
     }
 
     public static void main(String[] args) {
-        tools.d(weirdExpansion());
+        Tools.d(weirdExpansion());
 
     }
 

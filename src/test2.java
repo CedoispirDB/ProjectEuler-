@@ -1,5 +1,5 @@
 import utils.mathTools;
-import utils.tools;
+import utils.Tools;
 
 import java.io.BufferedReader;
 import java.math.BigDecimal;
@@ -66,20 +66,20 @@ public class test2 {
             }
             for (double n : primes) {
                 if (n < d) {
-                    tools.i();
+                    Tools.i();
 //                  tools.d("Div1: " + n + "/" + d);
-                    tools.d("Div2: " + n + "/" + d);
+                    Tools.d("Div2: " + n + "/" + d);
 //                  tools.d("Result1: " +  (n / d));
                     if ((n / d) < (3.0 / 7.0)) {
-                        tools.d("Result2: " + n / d + "*Less");
+                        Tools.d("Result2: " + n / d + "*Less");
                     } else {
-                        tools.d("Result2: " + n / d);
+                        Tools.d("Result2: " + n / d);
                     }
 
-                    tools.d("CheckN: " + checkN + ", CheckD: " + checkD);
+                    Tools.d("CheckN: " + checkN + ", CheckD: " + checkD);
 
                     if (((d * n0) > (n * d0) && (checkN.multiply(new BigDecimal(d)).compareTo(checkD.multiply(new BigDecimal(n))) < 0))) {
-                        tools.d("Div: " + n + "/" + d + ", previous: " + checkN.divide(checkD, MathContext.DECIMAL32));
+                        Tools.d("Div: " + n + "/" + d + ", previous: " + checkN.divide(checkD, MathContext.DECIMAL32));
 
                         ans = n;
                         ans2 = d;
@@ -89,10 +89,10 @@ public class test2 {
                 }
             }
         }
-        tools.i();
-        tools.d("Second n: " + ans);
-        tools.d("Second d: " + ans2);
-        tools.d("Second ans: " + ans);
+        Tools.i();
+        Tools.d("Second n: " + ans);
+        Tools.d("Second d: " + ans2);
+        Tools.d("Second ans: " + ans);
     }
 
 }

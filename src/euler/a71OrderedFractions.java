@@ -1,6 +1,6 @@
 package euler;
 
-import utils.tools;
+import utils.Tools;
 import utils.mathTools;
 
 import java.util.LinkedList;
@@ -20,7 +20,7 @@ public class a71OrderedFractions {
 
         for (double d = 1; d <= l; d++) {
             for (double n = 1; n < d; n++) {
-                if (tools.isItPrime((int) d)|| tools.isItPrime((int) n)) {
+                if (Tools.isItPrime((int) d)|| Tools.isItPrime((int) n)) {
                     //Is reduced proper fraction
                     if ((n / d) < x) {
                         if ((n /d) > quotient){
@@ -35,7 +35,7 @@ public class a71OrderedFractions {
             }
 
         }
-        tools.d(ans);
+        Tools.d(ans);
     }
 
     public static void main(String[] args) {

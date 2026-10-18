@@ -1,5 +1,5 @@
 package euler;
-import utils.tools;
+import utils.Tools;
 
 public class a8largestProductSeries {
     public static long ps(String series) {
@@ -25,13 +25,13 @@ public class a8largestProductSeries {
             }
             if (multiplication > x) {
 
-                tools.d("Last Largest Multiplication = " + x + " , New Largest Multiplication = " + multiplication);
+                Tools.d("Last Largest Multiplication = " + x + " , New Largest Multiplication = " + multiplication);
                 x = multiplication;
             }
 
 
         }
-        tools.d("Multiplication of the numbers: " + x);
+        Tools.d("Multiplication of the numbers: " + x);
 
         return x;
 

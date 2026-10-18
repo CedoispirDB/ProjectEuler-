@@ -35,7 +35,7 @@ public class mathTools {
         int product = 1;
 
         for (int i = 1; i <= Math.max(a, b); i++) {
-            if (tools.isItPrime(i)) {
+            if (Tools.isItPrime(i)) {
                 if (a % i == 0) {
                     if (a != 1 && !passedNum.contains(a)) {
                         product *= i;
@@ -130,7 +130,7 @@ public class mathTools {
     public static int primeFactors(int n) {
         int factors = 0;
         for (int i = 1; i <= n ; i++) {
-            if (tools.isItPrime(i)) {
+            if (Tools.isItPrime(i)) {
                 if (n % i == 0) {
                     n = n / i;
                     factors++;
@@ -144,9 +144,9 @@ public class mathTools {
     public static void main(String[] args) {
 //        tools.d(simplifyNum(2, 2));
         //tools.d(leastCommonDenominator(15,10));
-        tools.d(primeFactors(61332));
-        tools.d(primeFactors(61334));
-        tools.d(primeFactors(61335));
-        tools.d(primeFactors(61336));
+        Tools.d(primeFactors(61332));
+        Tools.d(primeFactors(61334));
+        Tools.d(primeFactors(61335));
+        Tools.d(primeFactors(61336));
     }
 }
