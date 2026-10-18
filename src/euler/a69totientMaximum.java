@@ -1,69 +1,30 @@
 package euler;
 
-import utils.Tools;
+import utils.*;
 
-public class a69totientMaximum {
+public class a69TotientMaximum {
 
-    private static boolean compareMultiples(int a, int b) {
-        if (Math.max(a, b) % Math.min(a, b) == 0) {
-            return true;
+    private static double calculateMax(int max) {
+        double max_r = 0;
+        long max_n = 0;
+
+        for(long n = 2; n <= max; n++) {
+            long t = MaT.eulerProduct(n);
+
+            double ratio = (double) n / (double) t;
+
+            if(ratio > max_r) {
+                max_n = n;
+                max_r = ratio;
+            }
+
+            Log.printfln("n: %d -> phi(n): %d -> n/phi(n): %f", n, t, ratio);
         }
 
-        for (int i = 2; i <= Math.min(a, b); i++) {
-            if (a % i == 0 && b % i == 0) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static int totientFunction(int k) {
-        int phi = 0;
-        if (k == 1) {
-            return 1;
-        }
-        if (Tools.isItPrime(k)) {
-            return k - 1;
-        }
-        for (int i = 1; i <= k; i++) {
-            if (i % 100000 == 0) {
-                Tools.d("I'm at: " + i);
-            }
-            if (i == 1) {
-                phi++;
-            }
-            if (!compareMultiples(i, k)) {
-                phi++;
-            }
-        }
-        return phi;
-    }
-
-    private static double findMax() {
-        double nMax = 0;
-        double quotient;
-        double check = 0;
-        for (double n = 2; n <= 1000000; n++) {
-            if (n % 100000 == 0) {
-                Tools.d("I'm at: " + n);
-            }
-            quotient = n / totientFunction((int) n);
-            if (quotient > check) {
-                check = quotient;
-                nMax = n;
-                Tools.d("nMax so far: " + nMax + " for: " + quotient + "\n");
-            }
-        }
-        return nMax;
+        return max_n;
     }
 
     public static void main(String[] args) {
-        Tools.d(findMax());
+        Log.println("Solution: " + calculateMax(1000000));
     }
 }
-
-// 23 min first test with wrong number :/
-// 972637 0.05 miliseconds because is prime
-// 972638 17 minutes
-
-//

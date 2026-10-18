@@ -25,6 +25,31 @@ public class MaT {
         return sum;
     }
 
+    // O(sqrt(n))
+    public static long eulerProduct(long n) {
+        if (n < 0) {
+            return -1;
+        }
+
+        long r = n;
+
+        for (long p = 2; p <= n / p; p++) {
+            if (n % p == 0) {
+                r = r - r / p;
+
+                while (n % p == 0) {
+                    n = n / p;
+                }
+            }
+        }
+
+        if (n > 1) {
+            r = r - r / n;
+        }
+
+        return r;
+    }
+
     //Find a common factor
     public static double leastCommonDenominator(double a, double b) {
         if (a % b == 0) {
