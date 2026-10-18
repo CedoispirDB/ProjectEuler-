@@ -27,6 +27,7 @@ $class = @"
 package euler;
 
 import java.util.*;
+import utils.*;
 
 public class ${class_name} {
 

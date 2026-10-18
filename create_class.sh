@@ -27,6 +27,7 @@ class=$(cat << EOF
 package euler;
 
 import java.util.*;
+import utils.*;
 
 public class ${class_name} {
 
