@@ -3,24 +3,26 @@ package utils;
 import java.util.LinkedList;
 import java.util.List;
 
-public class mathTools {
+public class MaT {
 
-    // find the greatest common factor
-    public static int findGCD(int a, int b) {
-        int gcd = 0;
-        int compare = 0;
-        for (int i = 1; i <= a; i++) {
-            for (int k = 1; k <= b; k++) {
-                if (a % i == 0 && b % k == 0 && i == k) {
-                    if (i > compare) {
-                        gcd = i;
-                        compare = gcd;
-                    }
+    public static int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
 
-                }
+    // O(nlogn)
+    public static int totient(int max) {
+        int sum = 0;
+
+        for (int i = 1; i <= max; i++) {
+            if (gcd(max, i) == 1) {
+                sum++;
             }
         }
-        return gcd;
+
+        return sum;
     }
 
     //Find a common factor
@@ -45,7 +47,6 @@ public class mathTools {
                             b = b / i;
                         }
 
-
                     }
                 }
                 if (b % i == 0) {
@@ -58,7 +59,6 @@ public class mathTools {
                         }
                     }
                 }
-
 
             }
             if (product == Math.max(a, b)) {
@@ -129,7 +129,7 @@ public class mathTools {
     //Function to find how many prime factors a number has
     public static int primeFactors(int n) {
         int factors = 0;
-        for (int i = 1; i <= n ; i++) {
+        for (int i = 1; i <= n; i++) {
             if (Tools.isItPrime(i)) {
                 if (n % i == 0) {
                     n = n / i;
@@ -139,7 +139,6 @@ public class mathTools {
         }
         return factors;
     }
-
 
     public static void main(String[] args) {
 //        tools.d(simplifyNum(2, 2));

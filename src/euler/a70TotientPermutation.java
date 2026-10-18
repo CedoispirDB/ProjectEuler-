@@ -4,23 +4,29 @@ import utils.*;
 
 public class a70TotientPermutation {
 
-    private static int gcd(int a, int b) {
-        if (b == 0) {
-            return a;
+    // O(sqrt(n))
+    private static long eulerProduct(long n) {
+        if (n < 0) {
+            return -1;
         }
-        return gcd(b, a % b);
-    }
 
-    private static int totient(int max) {
-        int sum = 0;
+        long r = n;
 
-        for (int i = 1; i <= max; i++) {
-            if (gcd(max, i) == 1) {
-                sum++;
+        for (long p = 2; p <= n / p; p++) {
+            if (n % p == 0) {
+                r = r - r / p;
+
+                while (n % p == 0) {
+                    n = n / p;
+                }
             }
         }
 
-        return sum;
+        if (n > 1) {
+            r = r - r / n;
+        }
+
+        return r;
     }
 
     private static int sumDigits(String str) {
@@ -61,40 +67,29 @@ public class a70TotientPermutation {
     }
 
     public static void main(String[] args) {
+        double min_ratio = Double.MAX_VALUE;
+        long final_n = 0;
+        long max = 10000000;
 
-        double min_ratio = 1;
-        int final_n = 0;
-        int max = 10000000;
-
-        for (int n = 87109; n < 87109 + 1; n++) {
+        for (long n = 2; n < max; n++) {
             Log.printfln("Trying: %d", n);
-            int t = totient(n);
-
-            if (t > n) {
-                continue;
-            }
+            long t = eulerProduct(n);
 
             double r = (double) n / (double) t;
 
-            Log.println(r);
+            if (r > min_ratio) {
+                continue;
+            }
 
-            // if (r > min_ratio) {
-            //     continue;
-            // }
-
-            if (!isPermutation(t, n)) {
+            if (!isPermutation((int) t, (int) n)) {
                 continue;
             }
 
             min_ratio = r;
             final_n = n;
-            Log.printfln("%d -> %d", n, totient(n));
 
-            // for(int j = 1; j <= i; j++) {
-            //     Log.printfln("gdc(%d, %d) = %d", i, j, gcd(i, j));
-            // }
+            Log.printfln("%d -> %d", n, t);
         }
-
         Log.printfln("min_ratio: %f, final_n: %d", min_ratio, final_n);
     }
 }

@@ -1,15 +1,10 @@
-import utils.mathTools;
-import utils.Tools;
-
-import java.io.BufferedReader;
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.text.DecimalFormat;
-import java.util.LinkedList;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.util.LinkedList;
+import utils.Tools;
 
 public class test2 {
 

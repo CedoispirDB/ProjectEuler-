@@ -1,8 +1,7 @@
 package euler;
 
 import utils.Tools;
-import utils.mathTools;
-import java.math.BigInteger;
+import utils.MaT;
 
 public class a33digitCancellingFractions {
     private static double removeLikeTherms(int n, int d) {
@@ -61,7 +60,7 @@ public class a33digitCancellingFractions {
 
             }
         }
-        return mathTools.simplifyNum2(nProduct, dProduct);
+        return MaT.simplifyNum2(nProduct, dProduct);
     }
 
 

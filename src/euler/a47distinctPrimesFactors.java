@@ -1,7 +1,7 @@
 package euler;
 
+import utils.MaT;
 import utils.Tools;
-import utils.mathTools;
 public class a47distinctPrimesFactors {
 
 
@@ -18,7 +18,7 @@ public class a47distinctPrimesFactors {
             do {
                 n++;
                 if (!Tools.isItPrime(n)) {
-                    if (mathTools.primeFactors(n) >= numberOfFactors) {
+                    if (MaT.primeFactors(n) >= numberOfFactors) {
                         consecutive++;
                         if (firstN == 0) {
                             firstN = n;

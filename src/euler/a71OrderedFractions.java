@@ -1,9 +1,7 @@
 package euler;
 
-import utils.Tools;
-import utils.mathTools;
-
 import java.util.LinkedList;
+import utils.Tools;
 
 
 public class a71OrderedFractions {
