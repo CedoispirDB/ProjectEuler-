@@ -1,43 +1,41 @@
 package euler;
 
-import java.util.LinkedList;
-import utils.Tools;
-
+import utils.*;
 
 public class a71OrderedFractions {
 
-    private static void findOrder() {
-        LinkedList<Double> numerators = new LinkedList<>();
-        LinkedList<Double> denominators = new LinkedList<>();
+    private static double solution(double max) {
+        double max_r = 0.0;
+        double max_n = 0.0;
 
-        int l = 1000000;
+        double lower_bound_n = (2.0 / 5.0) * 1;
+        double upper_bound_n = (3.0 / 7.0) * max;
 
-        double x = 3.0/7.0;
-        double quotient = 0;
-        double ans = 0;
+        double lower_bound_d = (7.0 / 3.0);
+        double upper_bound_d = (5.0 / 2.0);
 
-        for (double d = 1; d <= l; d++) {
-            for (double n = 1; n < d; n++) {
-                if (Tools.isItPrime((int) d)|| Tools.isItPrime((int) n)) {
-                    //Is reduced proper fraction
-                    if ((n / d) < x) {
-                        if ((n /d) > quotient){
-                            quotient = (n / d);
-                            ans = n;
-                        }
-                    }
-
-
+        for (double n = Math.ceil(lower_bound_n); n < Math.floor(upper_bound_n); n++) {
+            for (double d = Math.ceil(lower_bound_d * n); d < Math.floor(upper_bound_d * n); d++) {
+                if(d == 0) continue;
+                if (MaT.gcd(n, d) != 1) {
+                    continue;
                 }
+                Log.printfln("Doing: %f / %f = %f", n, d, n / d);
 
+                double r = n / d;
+                if (r > max_r) {
+                    max_r = r;
+                    max_n = n;
+                }
             }
-
         }
-        Tools.d(ans);
+
+        return max_n;
+
     }
 
     public static void main(String[] args) {
-        findOrder();
+        Log.println("Solution: " + solution(Const.ONE_MILLION));
     }
 
 }

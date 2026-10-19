@@ -12,6 +12,10 @@ public class MaT {
         return gcd(b, a % b);
     }
 
+    public static double gcd(double a, double b) {
+        return (double) gcd((int) a, (int) b);
+    }
+
     // O(nlogn)
     public static int totient(int max) {
         int sum = 0;

@@ -6,6 +6,7 @@ param(
 $projectFile = Get-ChildItem "src/euler" `
     -File `
     -Filter "a$number*.java" |
+    Where-Object { $_.BaseName -cmatch "^a${number}[A-Z]" } |
     Select-Object -First 1
 
 if (-not $projectFile) {
