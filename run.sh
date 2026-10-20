@@ -2,7 +2,7 @@
 
 number="$1"
 
-project_file=$(find src/euler -maxdepth 1 -type f -name "a${number}*.java" | head -n 1)
+project_file=$(find src/euler -maxdepth 1 -type f -name "a${number}*.java" | grep -E "/a${number}[^0-9]" | head -n 1)
 
 if [ -z "$project_file" ]; then
     echo "Projeto $number não encontrado."
