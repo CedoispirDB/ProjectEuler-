@@ -9,7 +9,7 @@ public class a69TotientMaximum {
         long max_n = 0;
 
         for(long n = 2; n <= max; n++) {
-            long t = MaT.eulerProduct(n);
+            long t = Mat.eulerProduct(n);
 
             double ratio = (double) n / (double) t;
 

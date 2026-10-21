@@ -1,7 +1,7 @@
 package euler;
 
 import utils.Tools;
-import utils.MaT;
+import utils.Mat;
 
 public class a33digitCancellingFractions {
     private static double removeLikeTherms(int n, int d) {
@@ -60,7 +60,7 @@ public class a33digitCancellingFractions {
 
             }
         }
-        return MaT.simplifyNum2(nProduct, dProduct);
+        return Mat.simplifyNum2(nProduct, dProduct);
     }
 
 

@@ -2,7 +2,7 @@ package euler;
 
 import java.util.LinkedList;
 import java.util.List;
-import utils.MaT;
+import utils.Mat;
 import utils.Tools;
 
 public class a57squareRootConvergents {
@@ -10,12 +10,12 @@ public class a57squareRootConvergents {
     private static List<Integer> divFraction(double n1, double d1, double n2, double d2) {
         double n = n1 * d2;
         double d = d1 * n2;
-        return MaT.simplifyNum((int) n, (int) d);
+        return Mat.simplifyNum((int) n, (int) d);
     }
 
     private static List<Integer> sumFractions(double n1, double d1, double n2, double d2) {
         List<Integer> fraction = new LinkedList<>();
-        double cf = MaT.leastCommonDenominator(d1, d2);
+        double cf = Mat.leastCommonDenominator(d1, d2);
         double result;
         n1 = n1 * (cf / d1);
         n2 = n2 * (cf / d2);
@@ -26,7 +26,7 @@ public class a57squareRootConvergents {
             fraction.add(1);
             return fraction;
         }
-        return MaT.simplifyNum((int) result, (int) cf);
+        return Mat.simplifyNum((int) result, (int) cf);
     }
 
 //    private static List<Integer> expansion(int n, int d, int pos, int count) {

@@ -3,7 +3,7 @@ package utils;
 import java.util.LinkedList;
 import java.util.List;
 
-public class MaT {
+public class Mat {
 
     public static int gcd(int a, int b) {
         if (b == 0) {
