@@ -8,6 +8,21 @@ import java.util.List;
 
 public class Tools {
 
+    public static void check(boolean condition, String name) {
+        if (!condition) {
+            throw new AssertionError("FAILED: " + name);
+        }
+        System.out.println("PASSED: " + name);
+    }
+
+    public static void check_null(Object obj, String name) {
+        check(obj == null, name);
+    }
+
+    public static void check_not_null(Object obj, String name) {
+        check(obj != null, name);
+    }
+
     // retusn -1 if non-numeric value
     public static int charToDigit(char c) {
         return Character.getNumericValue(c);

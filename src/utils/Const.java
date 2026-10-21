@@ -5,5 +5,5 @@ public final class Const {
 
     }
 
-    public static final int ONE_MILLION = 1000000;
+    public static final int ONE_MILLION = 1_000_000;
 }

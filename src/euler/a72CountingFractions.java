@@ -15,6 +15,8 @@ public class a72CountingFractions {
             test_improper += count_divisors(d);
         }
 
+        Log.printfln("Used: ");
+        Log.printfln("test_fraction: %d, test_even: %d, test_improper: %d", test_fraction, test_even, test_improper);
         int r = test_fraction - (test_even + test_improper);
         return r;
     }
@@ -54,22 +56,21 @@ public class a72CountingFractions {
         int current = 0;
         int test_improper = 0;
 
-
         for (int d = 2; d <= max; d++) {
-            Log.println("d: " + d);
+            // Log.println("d: " + d);
             // if (!((d >= 2 && n >= 2) && (d % 2 == 0 && n % 2 == 0))) {
-            test_improper += count_divisors(d);
+            // test_improper += count_divisors(d);
             // }  
             for (int n = 1; n < d; n++) {
-                Log.printf("%d / %d", n, d);
+                Log.printf("%d / %d (%d)", n, d, Mat.gcd(d, n));
                 fractions++;
                 if ((d >= 2 && n >= 2) && (d % 2 == 0 && n % 2 == 0)) {
                     invalid_even++;
-                    Log.println("(even)");
+                    Log.println(" - (even)");
                 } else 
                 if (n != 1 && d % n == 0) {
                     invalid_improper ++;
-                    Log.println("(not reduced)");
+                    Log.println(" - (not reduced)");
                     current++;
                 } else {
                     Log.skip_line();
@@ -96,8 +97,9 @@ public class a72CountingFractions {
 
     public static void main(String[] args) {
         // int max = Const.ONE_MILLION;
-        int max = 500;
+        int max = 40;
         test(max);
-        Log.println("Solution: " + solution(max));
+        Log.skip_line();
+        // Log.println("Solution: " + solution(max));
     }
 }
