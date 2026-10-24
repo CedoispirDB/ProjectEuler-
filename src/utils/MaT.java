@@ -5,6 +5,51 @@ import java.util.List;
 
 public class Mat {
 
+    public static long cube(long x) {
+        return x * x * x;
+    }
+
+    public static int cube(int x) {
+        return x * x * x;
+    }
+
+    public static int sumDigits(String str) {
+        int sum = 0;
+        for (int i = 0; i < str.length(); i++) {
+            sum += Tools.charToDigit(str.charAt(i));
+        }
+
+        return sum;
+    }
+
+    public static boolean isPermutation(int a, int b) {
+        String a_str = String.valueOf(a);
+        String b_str = String.valueOf(b);
+
+        if (a_str.length() != b_str.length()) {
+            return false;
+        }
+
+        if (sumDigits(a_str) != sumDigits(b_str)) {
+            return false;
+        }
+
+        int[] frequency = new int[10];
+
+        for (int i = 0; i < a_str.length(); i++) {
+            frequency[a_str.charAt(i) - '0']++;
+            frequency[b_str.charAt(i) - '0']--;
+        }
+
+        for (int c : frequency) {
+            if (c != 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public static int gcd(int a, int b) {
         if (b == 0) {
             return a;

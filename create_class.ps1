@@ -21,6 +21,12 @@ $class_name = "a${numero}${clean_name}"
 
 $file = Join-Path $path "${class_name}.java"
 
+# Verifica se o arquivo ja existe
+if (Test-Path $file) {
+    Write-Host "Arquivo $file ja existe. Operacao cancelada."
+    exit 1
+}
+
 New-Item -ItemType Directory -Path $path -Force | Out-Null
 
 $class = @"

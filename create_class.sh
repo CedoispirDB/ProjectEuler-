@@ -1,9 +1,11 @@
+#!/bin/bash
+
 name="$1"
 numero="$2"
 
 if [[ -z "${name}" ]]; then
-  echo "Missing name"
-  exit 1
+    echo "Missing name"
+    exit 1
 fi
 
 if [[ -z "${numero}" ]]; then
@@ -19,11 +21,16 @@ class_name="a${numero}${clean_name}"
 
 file="${path}/${class_name}.java"
 
-touch "${file}"
+# Verifica se o arquivo ja existe
+if [[ -e "${file}" ]]; then
+    echo "Arquivo ${file} ja existe. Operacao cancelada."
+    exit 1
+fi
 
-echo "Arquivo ${file} criado"
+mkdir -p "${path}"
 
-class=$(cat << EOF
+# Cria o arquivo sem sobrescrever um existente
+if ! (set -C; cat > "${file}" <<EOF
 package euler;
 
 import java.util.*;
@@ -32,9 +39,13 @@ import utils.*;
 public class ${class_name} {
 
     public static void main(String[] args) {
-    
+
     }
 }
-)
+EOF
+); then
+    echo "Erro ao criar ${file}."
+    exit 1
+fi
 
-echo "${class}" >> ${file}
+echo "Arquivo ${file} criado"
