@@ -6,8 +6,8 @@ import utils.*;
 public class a72CountingFractions {
 
     private static int solution(int max) {
-        int test_even = sum_up((int)((double)max / 2) - 1);
         int test_fraction = (max - 1) * max - sum_up(max - 1);
+        int test_even = sum_up((int)((double)max / 2) - 1);
         int test_improper = 0;
 
         for (int d = 2; d <= max; d++) {
@@ -97,9 +97,9 @@ public class a72CountingFractions {
 
     public static void main(String[] args) {
         // int max = Const.ONE_MILLION;
-        int max = 40;
-        test(max);
-        Log.skip_line();
-        // Log.println("Solution: " + solution(max));
+        int max = 8;
+        // test(max);
+        // Log.skip_line();
+        Log.println("Solution: " + solution(max));
     }
 }
