@@ -28,6 +28,10 @@ public class PrimeT {
 
     // get index-th prime (1 indexed)
     public static int prime(int index) {
+        if (index == 0) {
+            throw new IllegalArgumentException("index must be greater than 0");
+        }
+
         if (index < 1) {
             throw new IllegalArgumentException("index must be positive");
         }

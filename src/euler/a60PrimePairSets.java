@@ -215,8 +215,8 @@ public class a60PrimePairSets {
     }
 
     public static void test_1(int target) {
-        int outer = 30_000; // start at p0 = 3
-        int inner = 1; // start at p2 = 3;
+        int outer = 2; // start at p0 = 3
+        int inner = 1; // start at p1 = 2;
         int p0;
         int p1;
         boolean found = false;
@@ -252,7 +252,7 @@ public class a60PrimePairSets {
 
                 String p1_str = String.valueOf(p1);
                 int ds1 = Mat.digitsSum(p1_str);
-  
+
                 int dst = ds0 + ds1;
 
                 if (dst % 3 == 0 || dst % 9 == 0) {
@@ -323,7 +323,6 @@ public class a60PrimePairSets {
                     }
                 }
 
-
                 if (found) {
                     break;
                 }
@@ -343,38 +342,203 @@ public class a60PrimePairSets {
         }
 
         Log.println("Solution: " + r);
+    }
 
+    public static void test_2(int target) {
+
+        int outer = 2; // start at p0 = 3
+        int inner = 1; // start at p1 = 2;
+        int p0;
+        int p1;
+
+        // reference to list of primes
+        var primes = PrimeT.savedPrimes();
+
+        HashMap<Integer, LinkedList<Integer>> visited = new HashMap<>();
+
+        int[] answer = new int[4];
+
+        HashMap<Integer, LinkedList<Integer>> frequency = new HashMap<>();
+
+        // loop 1
+        while (true) {
+            inner = 1;
+
+            p0 = PrimeT.prime(outer++);
+            String p0_str = String.valueOf(p0);
+            int ds0 = Mat.digitsSum(p0_str);
+
+            var v = visited.get(p0);
+            if (v == null) {
+                v = new LinkedList<>();
+                visited.put(p0, v);
+            }
+
+            // Log.println("p0: " + p0);
+            // test combinations prio to p0
+            // loop 2
+            while (true) {
+                p1 = primes.get(inner++);
+                // Log.println("p1: " + p1);
+                if (p1 >= p0) {
+                    break;
+                }
+
+                if (p1 == 5) {
+                    continue;
+                }
+
+                var check = visited.get(p0);
+                if (check != null) {
+                    if (check.contains(p1)) {
+                        continue;
+                    }
+                }
+
+                String p1_str = String.valueOf(p1);
+                int ds1 = Mat.digitsSum(p1_str);
+
+                int dst = ds0 + ds1;
+
+                if (dst % 3 == 0) {
+                    continue;
+                }
+
+                String test_str_1 = p0_str + p1_str;
+                String test_str_2 = p1_str + p0_str;
+                int test_1 = Integer.parseInt(test_str_1);
+                int test_2 = Integer.parseInt(test_str_2);
+
+                if (PrimeT.arePrime(test_1, test_2)) {
+                    var v1 = visited.get(p1);
+                    if (v1 == null) {
+                        v1 = new LinkedList<>();
+                        visited.put(p1, v1);
+                    }
+                    v1.add(p0);
+
+                    v.add(p1);
+                }
+            }
+            // end loop 2
+
+            Log.println("Trying: " + p0 + ": " + v);
+            // Log.map(visited);
+
+            Iterator<Integer> it = v.iterator();
+            int count = 1;
+            // loop 3
+            while (it.hasNext()) {
+                int out = it.next();
+
+                // inner for
+                for (Integer in : v) {
+
+                    if (out == in) {
+                        continue;
+                    }
+
+                    boolean ohi = visited.get(out).contains(in);
+                    if (ohi) {
+
+                        var list = frequency.get(count);
+                        if (list == null) {
+                            list = new LinkedList<>();
+                            count = 1;
+                        } else {
+                            count++;
+                        }
+                        frequency.put(in, count);
+
+                        // Log.all(out, in, count, freq_found_cnt);
+                    }
+
+                }
+                // end inner for
+
+                // Log.all(valid_pair_count, index);
+            }
+            // end loop 3
+            
+            if(p0 == 673) break;
+            frequency.clear();
+        }
+        // end loop 1
+
+        Log.skip_line();
+        Log.map(frequency);
+        int r = p0;
+        for(var e : frequency.entrySet()) {
+            int k = e.getKey();
+            int v = e.getValue();
+
+            if(v == target - 2) {
+                r += k;
+            }
+        }
+
+        // Log.skip_line();
+        // Log.map(visited);
+        Log.skip_line();
+
+        Log.println(p0 + ": " + visited.get(p0));
+
+        for (Integer k : visited.get(p0)) {
+            Log.println(k + ": " + visited.get(k));
+        }
+
+        Log.println("Solution: " + r);
     }
 
     public static void main(String[] args) {
-        test_1(5);
-        int c1 = 977;
-        int c2 = 797;
-        int c3 = 9719;
-        int c4 = 1997;
-        int c5 = 9743;
-        int c6 = 4397;
-        int c7 = 719;
-        int c8 = 197;
-        int c9 = 743;
+        // test_1(4);
 
-        int c10 = 437;
-        int c11 = 1943;
-        int c12 = 4319;
+        test_2(4);
 
-        Log.println(PrimeT.arePrime(437, 743));
+        // int c1 = 5229113;
+        // int c2 = 1352291;
+        // int c3 = 52291181;
+        // int c4 = 18152291;
+        // int c5 = 52291331;
+        // int c6 = 33152291;
+        // int c7 = 522911297;
+        // int c8 = 129752291;
+        int c9 = 13_181;
+        int c10 = 181_13;
 
-        // Log.println(PrimeT.isPrime(c1));
-        // Log.println(PrimeT.isPrime(c2));
-        // Log.println(PrimeT.isPrime(c3));
-        // Log.println(PrimeT.isPrime(c4));
-        // Log.println(PrimeT.isPrime(c5));
-        // Log.println(PrimeT.isPrime(c6));
-        // Log.println(PrimeT.isPrime(c7));
-        // Log.println(PrimeT.isPrime(c8));
-        // Log.println(PrimeT.isPrime(c9));
-        // Log.println(PrimeT.isPrime(c10));
-        // Log.println(PrimeT.isPrime(c11));
-        // Log.println(PrimeT.isPrime(c12));
+        // int c11 = 13_331;
+        // int c12 = 331_13;
+        // int c13 = 13_1297;
+        int c14 = 1297_13;
+
+        int c15 = 181_331;
+        int c16 = 331_181;
+
+        //int c17 = 1811297;
+        int c18 = 1297_181;
+
+        int c19 = 331_1297;
+        int c20 = 1297_331;
+
+//         Log.println(PrimeT.isPrime(c1));
+//         Log.println(PrimeT.isPrime(c2));
+//         Log.println(PrimeT.isPrime(c3));
+//         Log.println(PrimeT.isPrime(c4));
+//         Log.println(PrimeT.isPrime(c5));
+//         Log.println(PrimeT.isPrime(c6));
+//         Log.println(PrimeT.isPrime(c7));
+//         Log.println(PrimeT.isPrime(c8));
+//         Log.println(PrimeT.isPrime(c9));
+//         Log.println(PrimeT.isPrime(c10));
+//         Log.println(PrimeT.isPrime(c11));
+//         Log.println(PrimeT.isPrime(c12));
+// Log.println(PrimeT.isPrime(c13));
+// Log.println(PrimeT.isPrime(c14));
+// Log.println(PrimeT.isPrime(c15));
+// Log.println(PrimeT.isPrime(c16));
+// Log.println(PrimeT.isPrime(c17));
+// Log.println(PrimeT.isPrime(c18));
+// Log.println(PrimeT.isPrime(c19));
+// Log.println(PrimeT.isPrime(c20));
     }
 }
