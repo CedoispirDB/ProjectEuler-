@@ -23,6 +23,7 @@ public class Tools {
         check(obj != null, name);
     }
 
+    // change to Str class
     // retusn -1 if non-numeric value
     public static int charToDigit(char c) {
         return Character.getNumericValue(c);

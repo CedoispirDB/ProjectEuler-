@@ -59,7 +59,7 @@ public class a62CubicPermutations {
         // pair cubes with equal digit sum;
         for (int i = 0; i < group.size(); i++) {
             String cube = group.get(i);
-            int sum = Mat.sumDigits(cube);
+            int sum = Mat.digitsSum(cube);
 
             LinkedList<String> v = frequency.get(sum);
             if (v == null) {

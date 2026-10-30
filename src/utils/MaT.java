@@ -13,13 +13,17 @@ public class Mat {
         return x * x * x;
     }
 
-    public static int sumDigits(String str) {
+    public static int digitsSum(String str) {
         int sum = 0;
         for (int i = 0; i < str.length(); i++) {
             sum += Tools.charToDigit(str.charAt(i));
         }
 
         return sum;
+    }
+
+    public static int digitsSum(int n) {
+        return digitsSum(String.valueOf(n));
     }
 
     public static boolean isPermutation(int a, int b) {
@@ -30,7 +34,7 @@ public class Mat {
             return false;
         }
 
-        if (sumDigits(a_str) != sumDigits(b_str)) {
+        if (digitsSum(a_str) != digitsSum(b_str)) {
             return false;
         }
 
